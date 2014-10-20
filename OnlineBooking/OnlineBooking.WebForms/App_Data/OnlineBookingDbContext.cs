@@ -1,15 +1,13 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
-using OnlineBooking.Data.Migrations;
-using OnlineBooking.Model;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OnlineBooking.Data
+﻿namespace OnlineBooking.WebForms.Data
 {
+    using System;
+    using System.Data.Entity;
+
+    using Microsoft.AspNet.Identity.EntityFramework;
+
+    using OnlineBooking.WebForms.Models;
+    using OnlineBooking.WebForms.Data.Migrations;
+
     public class OnlineBookingDbContext : IdentityDbContext<ApplicationUser>, IOnlineBookingContext
     {
         public OnlineBookingDbContext()
@@ -32,14 +30,12 @@ namespace OnlineBooking.Data
 
         public IDbSet<Notification> Notifications { get; set; }
 
-        public IDbSet<ApplicationUser> Users { get; set; }
-        
         public IDbSet<T> Set<T>() where T : class
         {
             return base.Set<T>();
         }
 
-        public int SaveChanges()
+        public override int SaveChanges()
         {
             return base.SaveChanges();
         }

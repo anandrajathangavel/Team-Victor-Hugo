@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using OnlineBooking.WebForms.Models;
 
 namespace OnlineBooking.WebForms.Account
 {

@@ -1,7 +1,7 @@
-﻿namespace OnlineBooking.Data
+﻿namespace OnlineBooking.WebForms.Data
 {
-    using OnlineBooking.Data.Ropositories;
-    using OnlineBooking.Model;
+    using OnlineBooking.WebForms.Data.Ropositories;
+    using OnlineBooking.WebForms.Models;
 
     public interface IOnlineBookingData
     {

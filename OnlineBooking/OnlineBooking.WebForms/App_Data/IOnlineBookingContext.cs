@@ -1,8 +1,8 @@
-﻿namespace OnlineBooking.Data
+﻿namespace OnlineBooking.WebForms.Data
 {
+    using OnlineBooking.WebForms.Models;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using OnlineBooking.Model;
 
     public interface IOnlineBookingContext
     {
@@ -19,9 +19,6 @@
         IDbSet<Reservation> Reservations { get; set; }
 
         IDbSet<Notification> Notifications { get; set; }
-
-        IDbSet<ApplicationUser> Users { get; set; }
-
 
         IDbSet<T> Set<T>() where T : class;
 

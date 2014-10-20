@@ -1,10 +1,11 @@
-﻿using OnlineBooking.Data.Ropositories;
-using System;
-using System.Collections.Generic;
-using OnlineBooking.Model;
-
-namespace OnlineBooking.Data
+﻿namespace OnlineBooking.WebForms.Data
 {
+    using System;
+    using System.Collections.Generic;
+
+    using OnlineBooking.WebForms.Data.Ropositories;
+    using OnlineBooking.WebForms.Models;
+    
     public class OnlineBookingData: IOnlineBookingData
     {
         private IOnlineBookingContext context;

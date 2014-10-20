@@ -6,8 +6,8 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using OnlineBooking.Model;
-using OnlineBooking.Data;
+using OnlineBooking.WebForms.Models;
+using OnlineBooking.WebForms.Data;
 
 namespace OnlineBooking.WebForms
 {

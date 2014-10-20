@@ -1,4 +1,4 @@
-﻿namespace OnlineBooking.Model
+﻿namespace OnlineBooking.WebForms.Models
 {
     using System;
 

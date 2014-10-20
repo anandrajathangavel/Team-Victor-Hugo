@@ -1,4 +1,4 @@
-﻿namespace OnlineBooking.Model
+﻿namespace OnlineBooking.WebForms.Models
 {
     using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
         public Country()
         {
-            this.Cities = new ICollection<City>();
+            this.Cities = new List<City>();
         }
 
         public int Id { get; set; }

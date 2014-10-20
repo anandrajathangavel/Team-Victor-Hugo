@@ -1,21 +1,20 @@
-﻿using System.Collections.Generic;
-
-namespace OnlineBooking.Model
+﻿namespace OnlineBooking.WebForms.Models
 {
-    public class Night
+    using System;
+    using System.Collections.Generic;
+
+    public class Service
     {
         private ICollection<Place> places;
 
-        public Night()
+        public Service()
         {
-            this.Places = new ICollection<Place>();
+            this.Places = new List<Place>();
         }
 
         public int Id { get; set; }
 
-        public RoomType Type { get; set; }
-
-        public NightBasis Basis { get; set; }
+        public string Name { get; set; }
 
         public decimal Price { get; set; }
 

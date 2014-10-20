@@ -7,9 +7,8 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using System.Collections.Generic;
-using OnlineBooking.Model;
 
-namespace OnlineBooking.Model
+namespace OnlineBooking.WebForms.Models
 {
     public class ApplicationUser : IdentityUser
     {
@@ -20,9 +19,9 @@ namespace OnlineBooking.Model
         public ApplicationUser()
             : base()
         {
-            this.AdminOfPlaces = new ICollection<Place>();
-            this.Notifications = new ICollection<Notification>();
-            this.Reservations = new ICollection<Reservation>();
+            this.AdminOfPlaces = new List<Place>();
+            this.Notifications = new List<Notification>();
+            this.Reservations = new List<Reservation>();
         }
 
         public bool Banned { get; set; }

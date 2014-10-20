@@ -1,7 +1,7 @@
-﻿namespace OnlineBooking.Model
+﻿namespace OnlineBooking.WebForms.Models
 {
     using System;
-using System.Collections.Generic;
+    using System.Collections.Generic;
 
     public class Place
     {
@@ -12,10 +12,10 @@ using System.Collections.Generic;
 
         public Place()
         {
-            this.Administrators = new ICollection<ApplicationUser>();
-            this.Services = new ICollection<Service>();
-            this.Nights = new ICollection<Night>();
-            this.Reservations = new ICollection<Reservation>();
+            this.Administrators = new List<ApplicationUser>();
+            this.Services = new List<Service>();
+            this.Nights = new List<Night>();
+            this.Reservations = new List<Reservation>();
         }
 
         public int Id { get; set; }

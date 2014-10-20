@@ -324,6 +324,13 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Data\IOnlineBookingContext.cs" />
+    <Compile Include="App_Data\IOnlineBookingData.cs" />
+    <Compile Include="App_Data\Migrations\Configuration.cs" />
+    <Compile Include="App_Data\OnlineBookingData.cs" />
+    <Compile Include="App_Data\OnlineBookingDbContext.cs" />
+    <Compile Include="App_Data\Repositories\GenericRepository.cs" />
+    <Compile Include="App_Data\Repositories\IGenericRepository.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -352,6 +359,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\City.cs" />
+    <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\IdentityHelper.cs" />
+    <Compile Include="Models\Night.cs" />
+    <Compile Include="Models\NightBasis.cs" />
+    <Compile Include="Models\Notification.cs" />
+    <Compile Include="Models\Place.cs" />
+    <Compile Include="Models\Reservation.cs" />
+    <Compile Include="Models\RoomType.cs" />
+    <Compile Include="Models\Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -376,20 +394,7 @@
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\OnlineBooking.Data\OnlineBooking.Data.csproj">
-      <Project>{c5e41dc7-3ca9-47e8-8798-9b848ae84354}</Project>
-      <Name>OnlineBooking.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OnlineBooking.Model\OnlineBooking.Model.csproj">
-      <Project>{069d6c0c-56f4-4e4d-abfe-67ae85a418e9}</Project>
-      <Name>OnlineBooking.Model</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
