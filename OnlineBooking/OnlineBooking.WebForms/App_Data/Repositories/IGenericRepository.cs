@@ -1,4 +1,4 @@
-﻿namespace OnlineBooking.WebForms.Data.Ropositories
+﻿namespace OnlineBooking.WebForms.App_Data.Repositories
 {
     using System;
     using System.Linq;

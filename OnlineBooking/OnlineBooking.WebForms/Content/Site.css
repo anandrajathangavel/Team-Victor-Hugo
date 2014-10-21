@@ -36,3 +36,19 @@ input[type="select"] {
         padding: 0;
     }
 }
+
+#main-content {
+    position: relative;
+    top: 15px;
+}
+
+#home-intro {
+    background: url(Images/home_intro.jpg) no-repeat;
+    background-size: cover;
+    color: #FFF;
+}
+
+#logo {
+    margin-top: -8px;
+    vertical-align: middle;
+}

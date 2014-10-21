@@ -1,4 +1,4 @@
-﻿namespace OnlineBooking.WebForms.Data
+﻿namespace OnlineBooking.WebForms.App_Data
 {
     using System;
     using System.Data.Entity;
@@ -6,7 +6,7 @@
     using Microsoft.AspNet.Identity.EntityFramework;
 
     using OnlineBooking.WebForms.Models;
-    using OnlineBooking.WebForms.Data.Migrations;
+    using OnlineBooking.WebForms.App_Data.Migrations;
 
     public class OnlineBookingDbContext : IdentityDbContext<ApplicationUser>, IOnlineBookingContext
     {

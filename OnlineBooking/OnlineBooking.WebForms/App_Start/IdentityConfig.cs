@@ -7,7 +7,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using OnlineBooking.WebForms.Models;
-using OnlineBooking.WebForms.Data;
+using OnlineBooking.WebForms.App_Data;
 
 namespace OnlineBooking.WebForms
 {

@@ -1,10 +1,9 @@
-﻿namespace OnlineBooking.WebForms.Data
+﻿namespace OnlineBooking.WebForms.App_Data
 {
     using System;
     using System.Collections.Generic;
-
-    using OnlineBooking.WebForms.Data.Ropositories;
     using OnlineBooking.WebForms.Models;
+    using OnlineBooking.WebForms.App_Data.Repositories;
     
     public class OnlineBookingData: IOnlineBookingData
     {

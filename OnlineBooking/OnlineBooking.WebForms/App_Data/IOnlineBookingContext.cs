@@ -1,4 +1,4 @@
-﻿namespace OnlineBooking.WebForms.Data
+﻿namespace OnlineBooking.WebForms.App_Data
 {
     using OnlineBooking.WebForms.Models;
     using System.Data.Entity;

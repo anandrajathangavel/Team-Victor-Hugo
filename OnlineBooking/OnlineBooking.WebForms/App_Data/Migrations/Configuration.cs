@@ -1,4 +1,4 @@
-namespace OnlineBooking.WebForms.Data.Migrations
+namespace OnlineBooking.WebForms.App_Data.Migrations
 {
     using System;
     using System.Data.Entity;
