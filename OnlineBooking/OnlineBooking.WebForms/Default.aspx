@@ -21,6 +21,7 @@
                 <div class="col-md-4">
                     <h2><%#: Item.Name %></h2>
                     <p><%#: Item.City.Name %></p>
+                    <p><a class="btn btn-default" href="#">To the place</a></p>
                 </div>
             </ItemTemplate>
         </asp:DataList>
