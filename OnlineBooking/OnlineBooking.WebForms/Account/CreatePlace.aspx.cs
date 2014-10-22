@@ -38,9 +38,26 @@
             var currentUser = this.data.Users.All()
                 .FirstOrDefault(c => c.UserName == this.User.Identity.Name);
 
+            string placeNameText = this.PlaceName.Text;
+            
+            if (placeNameText == null || placeNameText == string.Empty)
+            {
+                ErrorSuccessNotifier.AddErrorMessage("Place Name is Required!");
+                Response.Redirect("CreatePlace.aspx");
+            }
+            if (this.Stars.Text == null || this.Stars.Text == string.Empty)
+            {
+                ErrorSuccessNotifier.AddErrorMessage("Stars Count is Required!");
+                Response.Redirect("CreatePlace.aspx");
+            }
+            if (this.Capacity.Text == null || this.Capacity.Text == string.Empty)
+            {
+                ErrorSuccessNotifier.AddErrorMessage("Capcity is Required!");
+                Response.Redirect("CreatePlace.aspx");
+            }
+
             int starsCount = int.Parse(this.Stars.Text);
             int capacity = int.Parse(this.Capacity.Text);
-            string placeNameText = this.PlaceName.Text;
 
             if (starsCount < 1 || starsCount > 6)
             {
@@ -50,11 +67,6 @@
             if (capacity < 1 || capacity > 10000)
             {
                 ErrorSuccessNotifier.AddErrorMessage("Capacity should be between 1  and 10 000!");
-                Response.Redirect("CreatePlace.aspx");
-            }
-            if (placeNameText == null || placeNameText == string.Empty)
-            {
-                ErrorSuccessNotifier.AddErrorMessage("Place Name is Required!");
                 Response.Redirect("CreatePlace.aspx");
             }
 
@@ -71,6 +83,8 @@
 
             this.data.Places.Add(newPlace);
             this.data.SaveChanges();
+                
+            Response.Redirect("~/Default.aspx");
         }
 
         private void UpdateCitiesList()
