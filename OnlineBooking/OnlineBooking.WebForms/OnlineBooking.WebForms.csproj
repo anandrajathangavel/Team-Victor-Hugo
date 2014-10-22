@@ -155,6 +155,7 @@
     <Content Include="Account\ManageLogins.aspx" />
     <Content Include="Account\ManagePassword.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\PlaceDetails.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
@@ -177,6 +178,7 @@
     <Content Include="Controls\ErrorSuccessNotifier\Scripts\jquery-1.3.2.js" />
     <Content Include="Controls\ErrorSuccessNotifier\Styles\ErrorSuccessNotifier.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="images\star.png" />
     <Content Include="ListPlaces.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -299,6 +301,13 @@
     </Compile>
     <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\PlaceDetails.aspx.cs">
+      <DependentUpon>PlaceDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\PlaceDetails.aspx.designer.cs">
+      <DependentUpon>PlaceDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>

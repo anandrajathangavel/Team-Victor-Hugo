@@ -104,3 +104,16 @@ input[type="select"] {
     font-weight: bold;
     font-size: 18px;
 }
+
+.starImage{
+    display: inline-block;
+    margin: 15px 0px;
+    padding: 0;
+    width: 40px;
+}
+.inline-heading
+{
+    display: inline-block;
+    margin: 20px 00px;
+    padding: 0;
+}

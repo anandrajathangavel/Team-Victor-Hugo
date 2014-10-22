@@ -27,5 +27,14 @@ namespace OnlineBooking.WebForms
             string queryString = string.Format("~/ListPlaces.aspx?country={0}&city={1}", this.LocationSelect.Country, this.LocationSelect.City);
             this.Response.Redirect(queryString);
         }
+
+        protected void DetailsBtn_Command(object sender, CommandEventArgs e)
+        {
+            int placeId = Convert.ToInt32(e.CommandArgument);
+
+            string queryString = string.Format("~/Account/PlaceDetails.aspx?placeId={0}", placeId);
+            Response.Redirect(queryString);
+        }
+
     }
 }
