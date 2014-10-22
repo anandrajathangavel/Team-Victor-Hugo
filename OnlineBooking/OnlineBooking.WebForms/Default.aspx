@@ -42,7 +42,12 @@
                 <div class="col-md-4">
                     <h3><%#: Item.Name %></h3>
                     <p><%#: Item.City.Name %>, <%#: Item.City.Country.Name %></p>
-                    <p><a class="btn btn-default" href="#">To the place</a></p>
+                    <p>
+                        <asp:LinkButton ID="DetailsBtn" runat="server" Text="View place" CssClass="btn btn-success"
+                             CommandName="ViewDetails"
+                             CommandArgument="<%#: Item.Id %>"
+                             OnCommand="DetailsBtn_Command"  />
+                    </p>
                 </div>
             </ItemTemplate>
         </asp:Repeater>

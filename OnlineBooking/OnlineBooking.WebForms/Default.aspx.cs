@@ -30,5 +30,14 @@ namespace OnlineBooking.WebForms
                 this.Stars.Text);
             this.Response.Redirect(queryString);
         }
+
+        protected void DetailsBtn_Command(object sender, CommandEventArgs e)
+        {
+            int placeId = Convert.ToInt32(e.CommandArgument);
+
+            string queryString = string.Format("~/Account/PlaceDetails.aspx?placeId={0}", placeId);
+            Response.Redirect(queryString);
+        }
+
     }
 }
