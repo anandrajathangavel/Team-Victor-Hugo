@@ -61,6 +61,10 @@
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav">
                                 <li><a runat="server" href="~/Account/CreatePlace">Create Place</a></li>
+                                <!-- Admin -->
+                                <li><a runat="server" href="~/Admin/AddCountry">Add Country</a>
+                                <li><a runat="server" href="~/Admin/AddCity">Add City</a>
+                                <!-- Admin -->
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>

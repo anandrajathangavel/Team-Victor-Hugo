@@ -32,9 +32,6 @@
                         <div class="col-md-10">
                             <asp:DropDownList runat="server" ID="CitiesList" CssClass="form-control form-control-tweak">
                             </asp:DropDownList>
-                            <%--                            <asp:RequiredFieldValidator runat="server" ControlToValidate="confirmPassword"
-                                CssClass="text-danger" Display="Dynamic" ErrorMessage="The confirm password field is required."
-                                ValidationGroup="SetPassword" />--%>
                         </div>
                     </div>
                     <div class="form-group">
