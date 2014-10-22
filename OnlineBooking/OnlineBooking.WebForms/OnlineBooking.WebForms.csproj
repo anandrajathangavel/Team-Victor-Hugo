@@ -162,6 +162,8 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Admin\AddCity.aspx" />
+    <Content Include="Admin\AddCountry.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -332,6 +334,20 @@
     </Compile>
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddCity.aspx.cs">
+      <DependentUpon>AddCity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddCity.aspx.designer.cs">
+      <DependentUpon>AddCity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddCountry.aspx.cs">
+      <DependentUpon>AddCountry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddCountry.aspx.designer.cs">
+      <DependentUpon>AddCountry.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Data\IOnlineBookingContext.cs" />
     <Compile Include="App_Data\IOnlineBookingData.cs" />

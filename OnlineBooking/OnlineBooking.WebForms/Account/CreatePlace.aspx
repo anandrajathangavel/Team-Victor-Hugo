@@ -23,13 +23,11 @@
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="CountriesList" CssClass="col-md-2 control-label">Country</asp:Label>
                         <div class="col-md-10">
-                            <asp:DropDownList runat="server" ID="CountriesList" AutoPostBack="true" CssClass="form-control form-control-tweak">
-                                <asp:ListItem></asp:ListItem>
+                            <asp:DropDownList runat="server" ID="CountriesList" AutoPostBack="true" OnSelectedIndexChanged="CountriesList_SelectedIndexChanged" CssClass="form-control form-control-tweak">
                             </asp:DropDownList>
 <%--                            <asp:RequiredFieldValidator runat="server" ControlToValidate="confirmPassword"
                                 CssClass="text-danger" Display="Dynamic" ErrorMessage="The confirm password field is required."
                                 ValidationGroup="SetPassword" />--%>
-
                         </div>
                     </div>
                     <div class="form-group">
@@ -37,10 +35,6 @@
                         <div class="col-md-10">
                             <asp:DropDownList runat="server" ID="CitiesList" CssClass="form-control form-control-tweak">
                             </asp:DropDownList>
-<%--                            <asp:RequiredFieldValidator runat="server" ControlToValidate="confirmPassword"
-                                CssClass="text-danger" Display="Dynamic" ErrorMessage="The confirm password field is required."
-                                ValidationGroup="SetPassword" />--%>
-
                         </div>
                     </div>
                     <div class="form-group">

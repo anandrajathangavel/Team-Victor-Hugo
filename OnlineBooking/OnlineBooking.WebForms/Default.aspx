@@ -15,16 +15,16 @@
     </asp:LoginView>
 
     <div class="row">
-         <asp:DataList ID="DataListPlaces" runat="server"
+         <asp:Repeater ID="DataListPlaces" runat="server"
             ItemType="OnlineBooking.WebForms.Models.Place">
             <ItemTemplate>
                 <div class="col-md-4">
                     <h2><%#: Item.Name %></h2>
-                    <p><%#: Item.City.Name %></p>
+                    <p><%#: Item.City.Name %>, <%#: Item.City.Country.Name %></p>
                     <p><a class="btn btn-default" href="#">To the place</a></p>
                 </div>
             </ItemTemplate>
-        </asp:DataList>
+        </asp:Repeater>
     </div>
 
 </asp:Content>

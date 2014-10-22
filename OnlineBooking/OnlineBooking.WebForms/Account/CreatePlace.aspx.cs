@@ -1,14 +1,11 @@
-﻿using OnlineBooking.WebForms.App_Data;
-using OnlineBooking.WebForms.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
-namespace OnlineBooking.WebForms.Account
+﻿namespace OnlineBooking.WebForms.Account
 {
+    using OnlineBooking.WebForms.App_Data;
+    using OnlineBooking.WebForms.Models;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     public partial class CreatePlace : System.Web.UI.Page
     {
         private IOnlineBookingData data;
@@ -25,22 +22,11 @@ namespace OnlineBooking.WebForms.Account
 
                 this.UpdateCitiesList();
             }
-            else
-            {
-                this.UpdateCitiesList();
-            }
         }
 
-        private void UpdateCitiesList()
+        protected void CountriesList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedCountry = this.CountriesList.SelectedValue;
-            var cities = this.data.Cities.All()
-                .Where(c => c.Country.Name == selectedCountry)
-                .Select(c => c.Name)
-                .ToList();
-
-            this.CitiesList.DataSource = cities;
-            this.CitiesList.DataBind();
+            this.UpdateCitiesList();
         }
 
         protected void CreatePlace_Click(object sender, EventArgs e)
@@ -63,6 +49,18 @@ namespace OnlineBooking.WebForms.Account
 
             this.data.Places.Add(newPlace);
             this.data.SaveChanges();
+        }
+
+        private void UpdateCitiesList()
+        {
+            string selectedCountry = this.CountriesList.SelectedValue;
+            var cities = this.data.Cities.All()
+                .Where(c => c.Country.Name == selectedCountry)
+                .Select(c => c.Name)
+                .ToList();
+
+            this.CitiesList.DataSource = cities;
+            this.CitiesList.DataBind();
         }
     }
 }
