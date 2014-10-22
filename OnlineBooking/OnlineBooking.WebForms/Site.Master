@@ -87,7 +87,7 @@
             <br />
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Team Victor Hugo | Telerik Academy ASP.NET Web Forms Course 2014</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Team Victor Hugo | <a href="https://github.com/sttodorov/Team-Victor-Hugo" target="_blank">GitHub Repo</a> | Telerik Academy ASP.NET Web Forms Course 2014</p>
             </footer>
         </div>
     </form>

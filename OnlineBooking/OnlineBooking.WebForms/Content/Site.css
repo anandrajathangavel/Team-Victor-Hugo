@@ -99,7 +99,7 @@ input[type="select"] {
     background: #FFF;
 }
 
-#main-grid tr:last-child td[colspan="4"] td {
+#main-grid tr:last-child td[colspan="5"] td {
     display: inline-block;
     font-weight: bold;
     font-size: 18px;
