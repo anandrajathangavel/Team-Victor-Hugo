@@ -58,6 +58,15 @@ namespace OnlineBooking.WebForms.Account {
         protected global::System.Web.UI.WebControls.TextBox Stars;
         
         /// <summary>
+        /// StarsRangeValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator StarsRangeValidator;
+        
+        /// <summary>
         /// Capacity control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace OnlineBooking.WebForms.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Capacity;
+        
+        /// <summary>
+        /// CapacityRangeValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator CapacityRangeValidator;
         
         /// <summary>
         /// Email control.

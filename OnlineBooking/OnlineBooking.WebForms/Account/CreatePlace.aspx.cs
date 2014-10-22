@@ -3,6 +3,7 @@ using OnlineBooking.WebForms.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Error_Handler_Control;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -50,11 +51,31 @@ namespace OnlineBooking.WebForms.Account
             var currentUser = this.data.Users.All()
                 .FirstOrDefault(c => c.UserName == this.User.Identity.Name);
 
+            int starsCount = int.Parse(this.Stars.Text);
+            int capacity = int.Parse(this.Capacity.Text);
+            string placeNameText = this.PlaceName.Text;
+
+            if (starsCount < 1 || starsCount > 6)
+            {
+                ErrorSuccessNotifier.AddErrorMessage("Stars should be between 1  and 6!");
+                Response.Redirect("CreatePlace.aspx");
+            }
+            if (capacity < 1 || capacity > 10000)
+            {
+                ErrorSuccessNotifier.AddErrorMessage("Capacity should be between 1  and 10 000!");
+                Response.Redirect("CreatePlace.aspx");
+            }
+            if (placeNameText == null || placeNameText == string.Empty)
+            {
+                ErrorSuccessNotifier.AddErrorMessage("Place Name is Required!");
+                Response.Redirect("CreatePlace.aspx");
+            }
+
             Place newPlace = new Place()
             {
-                Name = this.PlaceName.Text,
+                Name = placeNameText,
                 CityId = selectedCity.Id,
-                Stars = int.Parse(this.Stars.Text),
+                Stars = starsCount,
                 Capacity = int.Parse(this.Capacity.Text),
                 Email = this.Email.Text,
                 Phone = this.Phone.Text,
