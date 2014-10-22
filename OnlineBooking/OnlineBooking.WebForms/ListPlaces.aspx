@@ -23,7 +23,7 @@
                             HeaderText="Place Name" 
                             SortExpression="Name" 
                             DataNavigateUrlFields="ID"
-                            DataNavigateUrlFormatString="PlaceDetails.aspx?Id={0}" />
+                            DataNavigateUrlFormatString="Account/PlaceDetails?placeId={0}" />
                         <asp:BoundField DataField="Location" HeaderText="Location"
                             SortExpression="Location" />
                         <asp:BoundField DataField="Stars" HeaderText="Stars"
