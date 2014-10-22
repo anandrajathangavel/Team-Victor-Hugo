@@ -26,7 +26,7 @@ namespace OnlineBooking.WebForms.Models
 
         public bool Banned { get; set; }
 
-        public ICollection<Reservation> Reservations
+        public virtual ICollection<Reservation> Reservations
         {
             get
             {
@@ -38,7 +38,7 @@ namespace OnlineBooking.WebForms.Models
             }
         }
 
-        public ICollection<Notification> Notifications
+        public virtual ICollection<Notification> Notifications
         {
             get
             {
@@ -50,7 +50,7 @@ namespace OnlineBooking.WebForms.Models
             }
         }
 
-        public ICollection<Place> AdminOfPlaces
+        public virtual ICollection<Place> AdminOfPlaces
         {
             get
             {

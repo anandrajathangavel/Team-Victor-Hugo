@@ -25,6 +25,7 @@ namespace OnlineBooking.WebForms.Admin
 
             this.data.Counties.Add(newCountry);
             this.data.SaveChanges();
+            Response.Redirect("~/Default.aspx");
         }
     }
 }

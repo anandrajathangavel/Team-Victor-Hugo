@@ -16,7 +16,7 @@ using System.Collections.Generic;
 
         public string Name { get; set; }
 
-        public ICollection<City> Cities
+        public virtual ICollection<City> Cities
         {
             get
             {

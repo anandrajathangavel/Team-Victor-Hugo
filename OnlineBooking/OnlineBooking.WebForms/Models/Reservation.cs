@@ -29,7 +29,7 @@
 
         public virtual Place Place { get; set; }
 
-        public ICollection<Place> Places
+        public virtual ICollection<Place> Places
         {
             get
             {
