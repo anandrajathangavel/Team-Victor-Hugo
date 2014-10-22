@@ -8,6 +8,16 @@
     {
         private IOnlineBookingData data;
 
+        public string Country
+        {
+            get { return this.CountriesList.SelectedValue; }
+        }
+
+        public string City
+        {
+            get { return this.CitiesList.SelectedValue; }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             this.data = new OnlineBookingData(new OnlineBookingDbContext());

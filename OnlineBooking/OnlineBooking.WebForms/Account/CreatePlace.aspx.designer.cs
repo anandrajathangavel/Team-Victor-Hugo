@@ -31,22 +31,13 @@ namespace OnlineBooking.WebForms.Account {
         protected global::System.Web.UI.WebControls.TextBox PlaceName;
         
         /// <summary>
-        /// CountriesList control.
+        /// Location control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CountriesList;
-        
-        /// <summary>
-        /// CitiesList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CitiesList;
+        protected global::OnlineBooking.WebForms.Controls.LocationDropDown Location;
         
         /// <summary>
         /// Stars control.

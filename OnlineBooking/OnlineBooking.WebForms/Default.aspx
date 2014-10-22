@@ -5,7 +5,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div id="home-intro" class="jumbotron">
-        <h1>GoBook</h1>
+        <h1><img src="/Content/Images/logo_title.png" width="280" height="69" alt="GoBook" /></h1>
         <p class="lead">Find the perfect place for your weekend adventure or well-planned holiday with just few clicks!</p>
         <p><a href="Account/Register" class="btn btn-primary btn-lg">Register Now &raquo;</a></p>
     </div>
@@ -23,7 +23,7 @@
                     <h2>Search</h2>
                     <asp:ValidationSummary runat="server" ShowModelStateErrors="true" CssClass="text-danger" />
                     <div class="search-form-tw">
-                        <place:LocationDropDown ID="LocationSelect" runat="server"></place:LocationDropDown>
+                        <place:LocationDropDown ID="LocationSelect" runat="server" />
                         <div class="form-group">
                             <asp:Label runat="server" AssociatedControlID="Stars" CssClass="col-md-2 control-label">Stars</asp:Label>
                             <div class="col-md-10">
@@ -32,7 +32,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-10">
-                                <asp:Button ID="AddCityBtn" runat="server" Text="Search" CssClass="btn btn-default" />
+                                <asp:Button ID="SearchBtn" runat="server" Text="Search" OnClick="SearchBtn_Click" CssClass="btn btn-default" />
                             </div>
                         </div>
                     </div>

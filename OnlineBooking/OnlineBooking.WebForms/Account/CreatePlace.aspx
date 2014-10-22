@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="Create a Place" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CreatePlace.aspx.cs" Inherits="OnlineBooking.WebForms.Account.CreatePlace" %>
 
+<%@ Register src="~/Controls/LocationDropDown.ascx" tagname="LocationDropDown" tagprefix="place" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %></h2>
     <div class="form-horizontal">
@@ -16,24 +18,7 @@
                             <%--<asp:RequiredFieldValidator  ID="RequiredFieldValidatorPlaceName" ControlToValidate="PlaceName" runat="server" Display="Dynamic" Text="Required Field" ErrorMessage="Plaec Name is required!" ForeColor="Red" EnableClientScript="False" />--%><br />
                         </div>
                     </div>
-                    <div class="form-group">
-                        <asp:Label runat="server" AssociatedControlID="CountriesList" CssClass="col-md-2 control-label">Country</asp:Label>
-                        <div class="col-md-10">
-                            <asp:DropDownList runat="server" ID="CountriesList" AutoPostBack="true" CssClass="form-control form-control-tweak">
-                                <asp:ListItem></asp:ListItem>
-                            </asp:DropDownList>
-                            <%--                            <asp:RequiredFieldValidator runat="server" ControlToValidate="confirmPassword"
-                                CssClass="text-danger" Display="Dynamic" ErrorMessage="The confirm password field is required."
-                                ValidationGroup="SetPassword" />--%>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <asp:Label runat="server" AssociatedControlID="CitiesList" CssClass="col-md-2 control-label">City</asp:Label>
-                        <div class="col-md-10">
-                            <asp:DropDownList runat="server" ID="CitiesList" CssClass="form-control form-control-tweak">
-                            </asp:DropDownList>
-                        </div>
-                    </div>
+                    <place:LocationDropDown ID="Location" runat="server" />
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="Stars" CssClass="col-md-2 control-label">Stars</asp:Label>
                         <div class="col-md-10">
@@ -54,8 +39,9 @@
                                 runat="server" />
                         </div>
                     </div>
-                    <asp:Literal Text="Additional Information" runat="server" />
-                    
+                    <br/>
+                    <h4>Additional Information</h4>
+                    <hr />
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Email</asp:Label>
                         <div class="col-md-10">

@@ -15,26 +15,13 @@
         protected void Page_Load(object sender, EventArgs e)
         {
             this.data = new OnlineBookingData(new OnlineBookingDbContext());
-
-            if (!this.IsPostBack)
-            {
-                var countries = this.data.Counties.All().Select(c => c.Name).ToList();
-                this.CountriesList.DataSource = countries;
-                this.CountriesList.DataBind();
-
-                this.UpdateCitiesList();
-            }
         }
 
-        protected void CountriesList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.UpdateCitiesList();
-        }
-
+        // TODO: Repetitive cities validation
         protected void CreatePlace_Click(object sender, EventArgs e)
         {
             var selectedCity = this.data.Cities.All()
-                .FirstOrDefault(c => c.Name == this.CitiesList.SelectedValue);
+                .FirstOrDefault(c => c.Name == this.Location.City);
             var currentUser = this.data.Users.All()
                 .FirstOrDefault(c => c.UserName == this.User.Identity.Name);
 
@@ -85,18 +72,6 @@
             this.data.SaveChanges();
                 
             Response.Redirect("~/Default.aspx");
-        }
-
-        private void UpdateCitiesList()
-        {
-            string selectedCountry = this.CountriesList.SelectedValue;
-            var cities = this.data.Cities.All()
-                .Where(c => c.Country.Name == selectedCountry)
-                .Select(c => c.Name)
-                .ToList();
-
-            this.CitiesList.DataSource = cities;
-            this.CitiesList.DataBind();
         }
     }
 }

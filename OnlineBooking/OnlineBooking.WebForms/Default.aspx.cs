@@ -21,5 +21,11 @@ namespace OnlineBooking.WebForms
             this.DataListPlaces.DataSource = places;
             this.DataListPlaces.DataBind();
         }
+
+        protected void SearchBtn_Click(object sender, EventArgs e)
+        {
+            string queryString = string.Format("~/ListPlaces.aspx?country={0}&city={1}", this.LocationSelect.Country, this.LocationSelect.City);
+            this.Response.Redirect(queryString);
+        }
     }
 }
