@@ -12,19 +12,30 @@
         </asp:Repeater>
     </div>
     <div class="row">
-        <span class="col-lg-3">Capacity: </span>
-        <span class="col-lg-2"><%:this.currentPlace.Capacity %></span>
-    </div>
-    <div class="row">
         <span class="col-lg-3">Phone Number: </span>
         <span class="col-lg-2"><%:this.currentPlace.Phone %></span>
     </div>
     <div class="row">
         <span class="col-lg-3">Email: </span>
+    <div class="row">
+        <span class="col-lg-3">Capacity: </span>
+        <span class="col-lg-2"><%:this.currentPlace.Capacity %></span>
+    </div>
         <span class="col-lg-2"><%:this.currentPlace.Email%></span>
     </div>
     <div class="row">
-        <span class="col-lg-3">Nights: </span>        
+        <span class="col-lg-3">Nights: </span>    
+
+        <%--IF ADMIN OF THE PLACE--%>
+        <span class="col-md-3">
+            <asp:Button ID="AddNigthBtn" runat="server" Text="Add" CssClass="btn btn-primary"
+                    CommandName="AddNightButton"
+                    CommandArgument="<%#: this.currentPlace.Id %>"
+                    OnCommand="AddNigthBtn_Command"  />
+        </span>
+        <%--====================================--%>
+    </div>
+    <div class="row">
         <br />
         <div class="row">
             <span class="col-lg-offset-3 col-lg-3">Type </span>
@@ -49,7 +60,6 @@
             </ItemTemplate>
         </asp:ListView>
     </div>
-
 
 
 </asp:Content>

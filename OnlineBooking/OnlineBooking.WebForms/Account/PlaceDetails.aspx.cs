@@ -37,5 +37,12 @@ namespace OnlineBooking.WebForms.Account
         {
             Response.Redirect("~/Default.aspx");
         }
+
+        protected void AddNigthBtn_Command(object sender, CommandEventArgs e)
+        {
+            int placeId = Convert.ToInt32(e.CommandArgument);
+            string queryString = string.Format("~/Account/AddNight?placeId={0}",placeId);
+            Response.Redirect(queryString);
+        }
     }
 }
