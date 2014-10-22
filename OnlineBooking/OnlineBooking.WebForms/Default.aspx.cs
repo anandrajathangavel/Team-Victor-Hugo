@@ -24,7 +24,10 @@ namespace OnlineBooking.WebForms
 
         protected void SearchBtn_Click(object sender, EventArgs e)
         {
-            string queryString = string.Format("~/ListPlaces.aspx?country={0}&city={1}", this.LocationSelect.Country, this.LocationSelect.City);
+            string queryString = string.Format("~/ListPlaces.aspx?Country={0}&City={1}&Stars={2}",
+                this.LocationSelect.Country,
+                this.LocationSelect.City,
+                this.Stars.Text);
             this.Response.Redirect(queryString);
         }
 

@@ -1,9 +1,7 @@
 ﻿namespace OnlineBooking.WebForms.Models
 {
-    using OnlineBooking.WebForms.App_Data;
     using System;
     using System.Collections.Generic;
-    using System.Data;
     using System.Linq;
 
     public class Place
@@ -80,34 +78,6 @@
             {
                 this.reservations = value;
             }
-        }
-
-        // TODO: Move somewhere else
-        public DataTable GetAll(string country)
-        {
-            var data = new OnlineBookingData(new OnlineBookingDbContext());
-            var places = data.Places.All()
-                .Where(p => p.City.Country.Name == country);
-
-            var dataTable = new DataTable();
-            dataTable.Columns.Add("Name");
-            dataTable.Columns.Add("Capacity");
-            dataTable.Columns.Add("Stars");
-            dataTable.Columns.Add("Phone");
-
-            foreach (Place place in places)
-            {
-                var row = dataTable.NewRow();
-
-                row["Name"] = place.Name;
-                row["Capacity"] = place.Capacity;
-                row["Stars"] = place.Stars;
-                row["Phone"] = place.Phone;
-
-                dataTable.Rows.Add(row);
-            }
-
-            return dataTable;
         }
     }
 }

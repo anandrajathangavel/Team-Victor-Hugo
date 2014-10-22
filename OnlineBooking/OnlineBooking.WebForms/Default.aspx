@@ -10,17 +10,11 @@
         <p><a href="Account/Register" class="btn btn-primary btn-lg">Register Now &raquo;</a></p>
     </div>
 
-    <asp:LoginView runat="server" ViewStateMode="Disabled">
-        <LoggedInTemplate>
-            You are logged in now
-        </LoggedInTemplate>
-    </asp:LoginView>
-
-    <div class="form-horizontal">
-        <section id="search-form">
-            <asp:PlaceHolder runat="server" ID="SearchPlHolder">
+    <div class="well bs-component">
+        <div class="form-horizontal">
+            <fieldset>
+                <legend>Search</legend>
                 <div class="form-horizontal">
-                    <h2>Search</h2>
                     <asp:ValidationSummary runat="server" ShowModelStateErrors="true" CssClass="text-danger" />
                     <div class="search-form-tw">
                         <place:LocationDropDown ID="LocationSelect" runat="server" />
@@ -32,13 +26,13 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-10">
-                                c
+                                <asp:Button ID="SearchBtn" runat="server" Text="Search" OnClick="SearchBtn_Click" CssClass="btn btn-primary" />
                             </div>
                         </div>
                     </div>
                 </div>
-            </asp:PlaceHolder>
-        </section>
+            </fieldset>
+        </div>
     </div>
 
     <div class="row">
