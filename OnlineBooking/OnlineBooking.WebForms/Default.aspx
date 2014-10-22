@@ -36,7 +36,8 @@
     </div>
 
     <div class="row">
-         <asp:Repeater ID="DataListPlaces" runat="server"
+        <h2>Most Finest Places</h2>
+        <asp:Repeater ID="DataListPlaces" runat="server"
             ItemType="OnlineBooking.WebForms.Models.Place">
             <ItemTemplate>
                 <div class="col-md-4">
@@ -44,9 +45,9 @@
                     <p><%#: Item.City.Name %>, <%#: Item.City.Country.Name %></p>
                     <p>
                         <asp:LinkButton ID="DetailsBtn" runat="server" Text="View place" CssClass="btn btn-success"
-                             CommandName="ViewDetails"
-                             CommandArgument="<%#: Item.Id %>"
-                             OnCommand="DetailsBtn_Command"  />
+                                CommandName="ViewDetails"
+                                CommandArgument="<%#: Item.Id %>"
+                                OnCommand="DetailsBtn_Command"  />
                     </p>
                 </div>
             </ItemTemplate>

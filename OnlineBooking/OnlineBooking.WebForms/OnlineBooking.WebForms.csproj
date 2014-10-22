@@ -154,6 +154,7 @@
     <Content Include="Account\Manage.aspx" />
     <Content Include="Account\ManageLogins.aspx" />
     <Content Include="Account\ManagePassword.aspx" />
+    <Content Include="Account\MyPlaces.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\PlaceDetails.aspx" />
     <Content Include="Account\Register.aspx" />
@@ -167,6 +168,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\home_intro.jpg" />
+    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\logo_title.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Controls\LocationDropDown.ascx" />
     <Content Include="Controls\ErrorSuccessNotifier\ErrorSuccessNotifier.ascx" />
@@ -294,6 +297,13 @@
     </Compile>
     <Compile Include="Account\ManagePassword.aspx.designer.cs">
       <DependentUpon>ManagePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\MyPlaces.aspx.cs">
+      <DependentUpon>MyPlaces.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\MyPlaces.aspx.designer.cs">
+      <DependentUpon>MyPlaces.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\OpenAuthProviders.ascx.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>

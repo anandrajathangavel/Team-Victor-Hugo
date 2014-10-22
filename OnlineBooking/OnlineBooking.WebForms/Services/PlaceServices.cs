@@ -7,7 +7,7 @@
 
     public class PlaceServices
     {
-        private IOnlineBookingData data;
+        private readonly IOnlineBookingData data;
 
         public PlaceServices()
         {
@@ -30,7 +30,21 @@
                     (starsStr != null ? p.Stars == stars : true)
                 );
 
+            return this.IQueryableToDataTable(places);
+        }
+
+        public DataTable GetUserPlaces(string currentUser)
+        {
+            var places = this.data.Places.All()
+                .Where(p => p.Administrators.Any(a => a.UserName == currentUser));
+
+            return this.IQueryableToDataTable(places);
+        }
+
+        private DataTable IQueryableToDataTable(IQueryable<Place> places)
+        {
             var dataTable = new DataTable();
+
             dataTable.Columns.Add("ID");
             dataTable.Columns.Add("Name");
             dataTable.Columns.Add("Location");

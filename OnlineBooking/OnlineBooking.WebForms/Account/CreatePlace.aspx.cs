@@ -71,7 +71,7 @@
             this.data.Places.Add(newPlace);
             this.data.SaveChanges();
                 
-            Response.Redirect("~/Default.aspx");
+            Response.Redirect("~/Account/MyPlaces.aspx");
         }
     }
 }

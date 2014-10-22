@@ -67,6 +67,7 @@
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hello, <%: Context.User.Identity.GetUserName() %>! <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <!-- Admin -->
+                                        <li><a runat="server" href="~/Account/MyPlaces.aspx">My Places</a></li>
                                         <li><a runat="server" href="~/Admin/AddCountry">Add Country</a></li>
                                         <li><a runat="server" href="~/Admin/AddCity">Add City</a></li>
                                         <!-- Admin -->

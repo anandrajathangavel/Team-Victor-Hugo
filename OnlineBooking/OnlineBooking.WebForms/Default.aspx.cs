@@ -16,7 +16,10 @@ namespace OnlineBooking.WebForms
         {
             this.data = new OnlineBookingData(new OnlineBookingDbContext());
 
-            var places = this.data.Places.All().ToList();
+            var places = this.data.Places.All()
+                .OrderByDescending(p => p.Stars)
+                .Take(6)
+                .ToList();
 
             this.DataListPlaces.DataSource = places;
             this.DataListPlaces.DataBind();
