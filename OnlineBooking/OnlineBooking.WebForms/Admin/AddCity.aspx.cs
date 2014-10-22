@@ -37,7 +37,10 @@ namespace OnlineBooking.WebForms.Admin
             };
 
             this.data.Cities.Add(newCity);
+            this.data.Counties.All().FirstOrDefault(c => c.Id == selectedCountry.Id).Cities.Add(newCity);
             this.data.SaveChanges();
+
+            Response.Redirect("~/Default.aspx");
         }
     }
 }

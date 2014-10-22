@@ -26,10 +26,6 @@
             }
         }
 
-        protected void CountriesList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.UpdateCitiesList();
-        }
 
         protected void CreatePlace_Click(object sender, EventArgs e)
         {
@@ -90,13 +86,18 @@
         private void UpdateCitiesList()
         {
             string selectedCountry = this.CountriesList.SelectedValue;
-            var cities = this.data.Cities.All()
-                .Where(c => c.Country.Name == selectedCountry)
-                .Select(c => c.Name)
-                .ToList();
+
+            var cities = this.data.Counties.All()
+                .FirstOrDefault(c => c.Name == selectedCountry)
+                .Cities.Select(ci => ci.Name);
 
             this.CitiesList.DataSource = cities;
             this.CitiesList.DataBind();
+        }
+
+        protected void CountriesList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.UpdateCitiesList();
         }
     }
 }

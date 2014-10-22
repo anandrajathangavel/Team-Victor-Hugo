@@ -18,7 +18,7 @@
 
         public virtual Country Country { get; set; }
 
-        public ICollection<Place> Places
+        public virtual ICollection<Place> Places
         {
             get
             {
