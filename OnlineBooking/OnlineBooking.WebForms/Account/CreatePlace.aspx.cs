@@ -1,5 +1,7 @@
 ﻿namespace OnlineBooking.WebForms.Account
+
 {
+    using Error_Handler_Control;
     using OnlineBooking.WebForms.App_Data;
     using OnlineBooking.WebForms.Models;
     using System;
@@ -36,11 +38,43 @@
             var currentUser = this.data.Users.All()
                 .FirstOrDefault(c => c.UserName == this.User.Identity.Name);
 
+            string placeNameText = this.PlaceName.Text;
+            
+            if (placeNameText == null || placeNameText == string.Empty)
+            {
+                ErrorSuccessNotifier.AddErrorMessage("Place Name is Required!");
+                Response.Redirect("CreatePlace.aspx");
+            }
+            if (this.Stars.Text == null || this.Stars.Text == string.Empty)
+            {
+                ErrorSuccessNotifier.AddErrorMessage("Stars Count is Required!");
+                Response.Redirect("CreatePlace.aspx");
+            }
+            if (this.Capacity.Text == null || this.Capacity.Text == string.Empty)
+            {
+                ErrorSuccessNotifier.AddErrorMessage("Capcity is Required!");
+                Response.Redirect("CreatePlace.aspx");
+            }
+
+            int starsCount = int.Parse(this.Stars.Text);
+            int capacity = int.Parse(this.Capacity.Text);
+
+            if (starsCount < 1 || starsCount > 6)
+            {
+                ErrorSuccessNotifier.AddErrorMessage("Stars should be between 1  and 6!");
+                Response.Redirect("CreatePlace.aspx");
+            }
+            if (capacity < 1 || capacity > 10000)
+            {
+                ErrorSuccessNotifier.AddErrorMessage("Capacity should be between 1  and 10 000!");
+                Response.Redirect("CreatePlace.aspx");
+            }
+
             Place newPlace = new Place()
             {
-                Name = this.PlaceName.Text,
+                Name = placeNameText,
                 CityId = selectedCity.Id,
-                Stars = int.Parse(this.Stars.Text),
+                Stars = starsCount,
                 Capacity = int.Parse(this.Capacity.Text),
                 Email = this.Email.Text,
                 Phone = this.Phone.Text,
@@ -49,6 +83,8 @@
 
             this.data.Places.Add(newPlace);
             this.data.SaveChanges();
+                
+            Response.Redirect("~/Default.aspx");
         }
 
         private void UpdateCitiesList()

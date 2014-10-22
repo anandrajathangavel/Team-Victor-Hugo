@@ -1,5 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="OnlineBooking.WebForms.SiteMaster" %>
-
+<%@ Register Src="~/Controls/ErrorSuccessNotifier/ErrorSuccessNotifier.ascx" TagPrefix="ucHandler" TagName="ErrorSuccessNotifier"%>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -79,6 +79,7 @@
         </div>
         <div class="container body-content">
             <div id="main-content">
+                <ucHandler:ErrorSuccessNotifier runat="server" id="ucHandler"/>
                 <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
             </div>
             <br />

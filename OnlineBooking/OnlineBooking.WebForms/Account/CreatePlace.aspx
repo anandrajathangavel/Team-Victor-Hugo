@@ -13,19 +13,16 @@
                         <asp:Label runat="server" AssociatedControlID="PlaceName" CssClass="col-md-2 control-label">Name</asp:Label>
                         <div class="col-md-10">
                             <asp:TextBox runat="server" ID="PlaceName" CssClass="form-control" />
-<%--                            <asp:RequiredFieldValidator runat="server" ControlToValidate="password"
-                                CssClass="text-danger" ErrorMessage="The password field is required."
-                                Display="Dynamic" ValidationGroup="SetPassword" />
-                            <asp:ModelErrorMessage runat="server" ModelStateKey="NewPassword" AssociatedControlID="password"
-                                CssClass="text-danger" SetFocusOnError="true" />--%>
+                            <%--<asp:RequiredFieldValidator  ID="RequiredFieldValidatorPlaceName" ControlToValidate="PlaceName" runat="server" Display="Dynamic" Text="Required Field" ErrorMessage="Plaec Name is required!" ForeColor="Red" EnableClientScript="False" />--%><br />
                         </div>
                     </div>
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="CountriesList" CssClass="col-md-2 control-label">Country</asp:Label>
                         <div class="col-md-10">
-                            <asp:DropDownList runat="server" ID="CountriesList" AutoPostBack="true" OnSelectedIndexChanged="CountriesList_SelectedIndexChanged" CssClass="form-control form-control-tweak">
+                            <asp:DropDownList runat="server" ID="CountriesList" AutoPostBack="true" CssClass="form-control form-control-tweak">
+                                <asp:ListItem></asp:ListItem>
                             </asp:DropDownList>
-<%--                            <asp:RequiredFieldValidator runat="server" ControlToValidate="confirmPassword"
+                            <%--                            <asp:RequiredFieldValidator runat="server" ControlToValidate="confirmPassword"
                                 CssClass="text-danger" Display="Dynamic" ErrorMessage="The confirm password field is required."
                                 ValidationGroup="SetPassword" />--%>
                         </div>
@@ -41,14 +38,24 @@
                         <asp:Label runat="server" AssociatedControlID="Stars" CssClass="col-md-2 control-label">Stars</asp:Label>
                         <div class="col-md-10">
                             <asp:TextBox runat="server" ID="Stars" TextMode="Number" CssClass="form-control form-control-tweak" />
+                            <asp:RangeValidator ID="StarsRangeValidator" ControlToValidate="Stars"
+                                Type="Integer" MinimumValue="1" MaximumValue="6" CssClass="text-danger" Display="Dynamic"
+                                ErrorMessage="Please enter an integer <br /> between 1 and 6.<br />"
+                                runat="server" />
                         </div>
                     </div>
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="Capacity" CssClass="col-md-2 control-label">Capacity</asp:Label>
                         <div class="col-md-10">
                             <asp:TextBox runat="server" ID="Capacity" TextMode="Number" CssClass="form-control form-control-tweak" />
+                            <asp:RangeValidator ID="CapacityRangeValidator" ControlToValidate="Capacity"
+                                Type="Integer" MinimumValue="1" MaximumValue="10000" CssClass="text-danger" Display="Dynamic"
+                                ErrorMessage="Please enter an integer <br /> between 1 and 10 000.<br />"
+                                runat="server" />
                         </div>
                     </div>
+                    <asp:Literal Text="Additional Information" runat="server" />
+                    
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Email</asp:Label>
                         <div class="col-md-10">
