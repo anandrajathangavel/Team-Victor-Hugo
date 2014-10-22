@@ -56,3 +56,17 @@ input[type="select"] {
 .form-control-tweak {
     width: 280px;
 }
+
+.search-form-tw {
+    overflow: hidden;
+}
+
+.search-form-tw .form-group {
+    float: left;
+    width: 300px;
+    margin-right: 25px;
+}
+
+.search-form-tw label {
+    margin-left: 10px;
+}

@@ -13,6 +13,42 @@ namespace OnlineBooking.WebForms {
     public partial class _Default {
         
         /// <summary>
+        /// SearchPlHolder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder SearchPlHolder;
+        
+        /// <summary>
+        /// LocationSelect control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::OnlineBooking.WebForms.Controls.LocationDropDown LocationSelect;
+        
+        /// <summary>
+        /// Stars control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Stars;
+        
+        /// <summary>
+        /// AddCityBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddCityBtn;
+        
+        /// <summary>
         /// DataListPlaces control.
         /// </summary>
         /// <remarks>
