@@ -1,27 +1,32 @@
-﻿using OnlineBooking.WebForms.App_Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
-namespace OnlineBooking.WebForms
+﻿namespace OnlineBooking.WebForms
 {
+    using System;
+    using System.Linq;
+    using System.Web.UI;
+    using System.Web.UI.WebControls;
+    using OnlineBooking.WebForms.App_Data;
+
     public partial class _Default : Page
     {
+        private const int PLACES_NUM = 6;
+        private const int CACHE_EXP_MINUTES = 1;
         private IOnlineBookingData data;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             this.data = new OnlineBookingData(new OnlineBookingDbContext());
 
-            var places = this.data.Places.All()
-                .OrderByDescending(p => p.Stars)
-                .Take(6)
-                .ToList();
+            if (this.Cache["FinestPlaces"] == null)
+            {
+                var finestPlaces = this.data.Places.All()
+                    .OrderByDescending(p => p.Stars)
+                    .Take(PLACES_NUM)
+                    .ToList();
 
-            this.DataListPlaces.DataSource = places;
+                this.Cache.Insert("FinestPlaces", finestPlaces, null, DateTime.Now.AddMinutes(CACHE_EXP_MINUTES), TimeSpan.Zero);
+            }
+
+            this.DataListPlaces.DataSource = this.Cache["FinestPlaces"];
             this.DataListPlaces.DataBind();
         }
 
