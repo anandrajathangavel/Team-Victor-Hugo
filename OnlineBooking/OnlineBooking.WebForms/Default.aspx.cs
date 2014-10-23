@@ -15,7 +15,7 @@
         protected void Page_Load(object sender, EventArgs e)
         {
             this.data = new OnlineBookingData(new OnlineBookingDbContext());
-
+            
             if (this.Cache["FinestPlaces"] == null)
             {
                 var finestPlaces = this.data.Places.All()
@@ -46,6 +46,5 @@
             string queryString = string.Format("~/Account/PlaceDetails.aspx?placeId={0}", placeId);
             Response.Redirect(queryString);
         }
-
     }
 }
