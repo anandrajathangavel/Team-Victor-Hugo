@@ -10,42 +10,42 @@
 namespace OnlineBooking.WebForms.Account {
     
     
-    public partial class PlaceDetails {
+    public partial class BookForm {
         
         /// <summary>
-        /// starsRepeater control.
+        /// CreatePlacePlHolder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater starsRepeater;
+        protected global::System.Web.UI.WebControls.PlaceHolder CreatePlacePlHolder;
         
         /// <summary>
-        /// AddNigthButton control.
+        /// ArrivingDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddNigthButton;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl ArrivingDate;
         
         /// <summary>
-        /// nightsList control.
+        /// DepartureDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView nightsList;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl DepartureDate;
         
         /// <summary>
-        /// BookBtn control.
+        /// DataListNights control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BookBtn;
+        protected global::System.Web.UI.WebControls.Repeater DataListNights;
     }
 }

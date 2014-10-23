@@ -21,11 +21,11 @@
 
         public bool Confirmed { get; set; }
 
-        public virtual int UserId { get; set; }
+        public virtual string UserId { get; set; }
 
         public virtual ApplicationUser User { get; set; }
 
-        public virtual int PlaceId { get; set; }
+        public int PlaceId { get; set; }
 
         public virtual Place Place { get; set; }
 

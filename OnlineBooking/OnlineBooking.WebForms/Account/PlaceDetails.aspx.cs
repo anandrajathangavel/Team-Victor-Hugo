@@ -14,7 +14,7 @@ namespace OnlineBooking.WebForms.Account
         private IOnlineBookingData data;
         public Place currentPlace;
 
-        protected void Page_PreRender(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
         {
             this.data = new OnlineBookingData(new OnlineBookingDbContext());
             int placeId = Convert.ToInt32(Request.Params["placeId"]);
@@ -31,18 +31,28 @@ namespace OnlineBooking.WebForms.Account
             nightsList.DataSource = this.currentPlace.Nights;
             nightsList.DataBind();
 
+
         }
 
         protected void BookBtn_Command(object sender, CommandEventArgs e)
         {
-            Response.Redirect("~/Default.aspx");
+            //int placeId = Convert.ToInt32(e.CommandArgument);
+            //string queryString = string.Format("~/Account/BookForm?placeId={0}",placeId);
+            //Response.Redirect(queryString);
+            string queryString = string.Format("~/Account/BookForm?placeId={0}",
+                this.currentPlace.Id);
+            this.Response.Redirect(queryString);
         }
 
         protected void AddNigthBtn_Command(object sender, CommandEventArgs e)
         {
-            int placeId = Convert.ToInt32(e.CommandArgument);
-            string queryString = string.Format("~/Account/AddNight?placeId={0}", placeId);
-            Response.Redirect(queryString);
+            //int placeId = Convert.ToInt32(e.CommandArgument);
+            //string queryString = string.Format("~/Account/AddNight?placeId={0}", placeId);
+            //Response.Redirect(queryString);
+            string queryString = string.Format("~/Account/AddNight?placeId={0}",
+                this.currentPlace.Id);
+            this.Response.Redirect(queryString);
         }
+
     }
 }

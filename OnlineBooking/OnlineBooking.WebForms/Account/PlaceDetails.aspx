@@ -11,29 +11,35 @@
             </ItemTemplate>
         </asp:Repeater>
     </div>
+    <br />
     <div class="row">
         <span class="col-lg-3">Phone Number: </span>
         <span class="col-lg-2"><%:this.currentPlace.Phone %></span>
     </div>
+    <br />
     <div class="row">
         <span class="col-lg-3">Email: </span>
+        <span class="col-lg-2"><%:this.currentPlace.Email %></span>
+    </div>
+    <br />
     <div class="row">
         <span class="col-lg-3">Capacity: </span>
         <span class="col-lg-2"><%:this.currentPlace.Capacity %></span>
     </div>
-        <span class="col-lg-2"><%:this.currentPlace.Email%></span>
-    </div>
+    <br />
     <div class="row">
         <span class="col-lg-3">Nights: </span>    
 
         <%--IF ADMIN OF THE PLACE--%>
         <span class="col-md-3">
-            <asp:Button ID="AddNigthBtn" runat="server" Text="Add" CssClass="btn btn-primary"
-                    CommandName="AddNightButton"
-                    CommandArgument="<%#: this.currentPlace.Id %>"
-                    OnCommand="AddNigthBtn_Command"  />
+            
+            <asp:Button ID="AddNigthButton" runat="server" Text="Add" CssClass="btn btn-primary"
+                        CommandName="AddNigthBtn"
+                        CommandArgument="<%# this.currentPlace.Id %>"
+                        OnCommand="AddNigthBtn_Command" />
         </span>
         <%--====================================--%>
+
     </div>
     <div class="row">
         <br />
@@ -49,16 +55,16 @@
                     <span class="col-lg-offset-3 col-lg-3"><%#: Item.Type %></span>
                     <span class="col-lg-3"><%#: Item.Basis %></span>
                     <span class="col-lg-1"><%#: Item.Price %></span>
-                    <span class="col-md-1">
-                        <asp:Button ID="BookBtn" runat="server" Text="Book" CssClass="btn btn-success"
-                             CommandName="BookButton"
-                             CommandArgument="<%#: Item.Id %>"
-                             OnCommand="BookBtn_Command"  />
-                    </span>                    
+                                 
                 </div>
                 
             </ItemTemplate>
         </asp:ListView>
+        <div class="row">
+            <span class="col-md-3">
+                <asp:Button ID="BookBtn" runat="server" Text="Book" CssClass="btn btn-success" OnCommand="BookBtn_Command"  />
+            </span>       
+        </div>
     </div>
 
 
