@@ -3,6 +3,8 @@
     using System;
     using System.Linq;
 
+    using Microsoft.AspNet.Identity;
+
     using Error_Handler_Control;
     using OnlineBooking.WebForms.Models;
     using OnlineBooking.WebForms.BasePage;
@@ -21,6 +23,7 @@
                 .FirstOrDefault(c => c.Name == this.Location.City);
             var currentUser = this.Data.Users.All()
                 .FirstOrDefault(c => c.UserName == this.User.Identity.Name);
+            var currentUserId = User.Identity.GetUserId();
 
             string placeNameText = this.PlaceName.Text;
             
@@ -62,7 +65,7 @@
                 Capacity = int.Parse(this.Capacity.Text),
                 Email = this.Email.Text,
                 Phone = this.Phone.Text,
-                Administrator = currentUser
+                AdministratorId = currentUserId
             };
 
             this.Data.Places.Add(newPlace);
