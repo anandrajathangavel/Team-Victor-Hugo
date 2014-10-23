@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="row">
-        <h2 class="inline-heading col-lg-3"><%: this.currentPlace.Name %></h2>
+        <h2 class="inline-heading col-lg-3"><%: this.CurrentPlace.Name %></h2>
 
         <asp:Repeater ID="starsRepeater" runat="server">
             <ItemTemplate>
@@ -14,17 +14,17 @@
     <br />
     <div class="row">
         <span class="col-lg-3">Phone Number: </span>
-        <span class="col-lg-2"><%:this.currentPlace.Phone %></span>
+        <span class="col-lg-2"><%:this.CurrentPlace.Phone %></span>
     </div>
     <br />
     <div class="row">
         <span class="col-lg-3">Email: </span>
-        <span class="col-lg-2"><%:this.currentPlace.Email %></span>
+        <span class="col-lg-2"><%:this.CurrentPlace.Email %></span>
     </div>
     <br />
     <div class="row">
         <span class="col-lg-3">Capacity: </span>
-        <span class="col-lg-2"><%:this.currentPlace.Capacity %></span>
+        <span class="col-lg-2"><%:this.CurrentPlace.Capacity %></span>
     </div>
     <br />
     <div class="row">
@@ -35,7 +35,7 @@
             
             <asp:Button ID="AddNigthButton" runat="server" Text="Add" CssClass="btn btn-primary"
                         CommandName="AddNigthBtn"
-                        CommandArgument="<%# this.currentPlace.Id %>"
+                        CommandArgument="<%# this.CurrentPlace.Id %>"
                         OnCommand="AddNigthBtn_Command" />
         </span>
         <%--====================================--%>

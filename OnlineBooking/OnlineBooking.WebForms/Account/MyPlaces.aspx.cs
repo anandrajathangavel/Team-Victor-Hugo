@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
-namespace OnlineBooking.WebForms.Account
+﻿namespace OnlineBooking.WebForms.Account
 {
-    public partial class MyPlaces : System.Web.UI.Page
+    using System;
+
+    using OnlineBooking.WebForms.BasePage;
+
+    public partial class MyPlaces : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

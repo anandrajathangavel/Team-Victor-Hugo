@@ -11,6 +11,12 @@
 
         private IDictionary<Type, object> repositories;
 
+        public OnlineBookingData()
+            :this(new OnlineBookingDbContext())
+        {
+
+        }
+
         public OnlineBookingData(IOnlineBookingContext context)
         {
             this.context = context;

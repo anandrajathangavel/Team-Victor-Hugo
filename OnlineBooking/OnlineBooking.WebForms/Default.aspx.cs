@@ -2,11 +2,11 @@
 {
     using System;
     using System.Linq;
-    using System.Web.UI;
     using System.Web.UI.WebControls;
+
     using OnlineBooking.WebForms.App_Data;
 
-    public partial class _Default : Page
+    public partial class _Default : BasePage.BasePage
     {
         private const int PLACES_NUM = 6;
         private const int CACHE_EXP_MINUTES = 1;

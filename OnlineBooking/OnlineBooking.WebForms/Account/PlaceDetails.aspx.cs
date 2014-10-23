@@ -1,56 +1,47 @@
-﻿using OnlineBooking.WebForms.App_Data;
-using OnlineBooking.WebForms.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
-namespace OnlineBooking.WebForms.Account
+﻿namespace OnlineBooking.WebForms.Account
 {
-    public partial class PlaceDetails : System.Web.UI.Page
+    using System;
+    using System.Linq;
+    using System.Web.UI.WebControls;
+
+    using OnlineBooking.WebForms.App_Data;
+    using OnlineBooking.WebForms.Models;
+    using OnlineBooking.WebForms.BasePage;
+
+    public partial class PlaceDetails : BasePage
     {
         private IOnlineBookingData data;
-        public Place currentPlace;
+        public Place CurrentPlace;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             this.data = new OnlineBookingData(new OnlineBookingDbContext());
             int placeId = Convert.ToInt32(Request.Params["placeId"]);
 
-            this.currentPlace = this.data.Places.All().FirstOrDefault(p => p.Id == placeId);
-            if(currentPlace == null)
+            this.CurrentPlace = this.data.Places.All().FirstOrDefault(p => p.Id == placeId);
+            if(CurrentPlace == null)
             {
                 // Should be Not Found
                 Response.Redirect("~/Default.aspx");
             }
-            starsRepeater.DataSource = new Array[this.currentPlace.Stars];
+            starsRepeater.DataSource = new Array[this.CurrentPlace.Stars];
             starsRepeater.DataBind();
 
-            nightsList.DataSource = this.currentPlace.Nights;
+            nightsList.DataSource = this.CurrentPlace.Nights;
             nightsList.DataBind();
-
-
         }
 
         protected void BookBtn_Command(object sender, CommandEventArgs e)
         {
-            //int placeId = Convert.ToInt32(e.CommandArgument);
-            //string queryString = string.Format("~/Account/BookForm?placeId={0}",placeId);
-            //Response.Redirect(queryString);
             string queryString = string.Format("~/Account/BookForm?placeId={0}",
-                this.currentPlace.Id);
+                this.CurrentPlace.Id);
             this.Response.Redirect(queryString);
         }
 
         protected void AddNigthBtn_Command(object sender, CommandEventArgs e)
         {
-            //int placeId = Convert.ToInt32(e.CommandArgument);
-            //string queryString = string.Format("~/Account/AddNight?placeId={0}", placeId);
-            //Response.Redirect(queryString);
             string queryString = string.Format("~/Account/AddNight?placeId={0}",
-                this.currentPlace.Id);
+                this.CurrentPlace.Id);
             this.Response.Redirect(queryString);
         }
 

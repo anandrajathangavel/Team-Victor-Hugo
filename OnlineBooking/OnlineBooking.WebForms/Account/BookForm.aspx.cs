@@ -1,27 +1,27 @@
-﻿using OnlineBooking.WebForms.App_Data;
-using OnlineBooking.WebForms.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Microsoft.AspNet.Identity;
-using Error_Handler_Control;
-
-namespace OnlineBooking.WebForms.Account
+﻿namespace OnlineBooking.WebForms.Account
 {
-    public partial class BookForm : System.Web.UI.Page
+    
+    using System;
+    using System.Linq;
+    using System.Web.UI;
+    using System.Web.UI.WebControls;
+
+    using Microsoft.AspNet.Identity;
+
+    using OnlineBooking.WebForms.App_Data;
+    using OnlineBooking.WebForms.Models;
+    using OnlineBooking.WebForms.BasePage;
+    using Error_Handler_Control;
+
+    public partial class BookForm : BasePage
     {
-        private IOnlineBookingData data;
         public Place CurrentPlace;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.data = new OnlineBookingData(new OnlineBookingDbContext());
             int placeId = Convert.ToInt32(Request.Params["placeId"]);
 
-            this.CurrentPlace = this.data.Places.All().FirstOrDefault(p => p.Id == placeId);
+            this.CurrentPlace = this.Data.Places.All().FirstOrDefault(p => p.Id == placeId);
             if (CurrentPlace == null)
             {
                 // Should be Not Found
@@ -42,9 +42,16 @@ namespace OnlineBooking.WebForms.Account
             int nightId = Convert.ToInt32(e.CommandArgument);
 
             string currentUserId = User.Identity.GetUserId();
-            var currentUser = this.data.Users.All().FirstOrDefault(u => u.Id == currentUserId);
+            var currentUser = this.Data.Users.All().FirstOrDefault(u => u.Id == currentUserId);
 
             var selectedNight = this.CurrentPlace.Nights.FirstOrDefault(n => n.Id == nightId);
+            
+            if (this.ArrivingDate.Value == string.Empty || this.DepartureDate.Value == string.Empty)
+            {
+                ErrorSuccessNotifier.AddErrorMessage("Please enter arriving and departure dates!");
+                Response.Redirect("~/Account/BookForm.aspx?placeId=" + CurrentPlace.Id);
+            }
+
             var arrDate = DateTime.Parse(this.ArrivingDate.Value);
             var depDate = DateTime.Parse(this.DepartureDate.Value);
 
@@ -69,9 +76,9 @@ namespace OnlineBooking.WebForms.Account
                 PlaceId = CurrentPlace.Id
             };
 
-            this.data.Reservations.Add(newReservation);
+            this.Data.Reservations.Add(newReservation);
             this.CurrentPlace.Reservations.Add(newReservation);
-            this.data.SaveChanges();
+            this.Data.SaveChanges();
 
             ErrorSuccessNotifier.AddSuccessMessage("Your reservation is now pending confirmation!");
             Response.Redirect("~/Default.aspx");

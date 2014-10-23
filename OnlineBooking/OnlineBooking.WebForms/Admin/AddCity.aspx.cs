@@ -1,25 +1,20 @@
-﻿using OnlineBooking.WebForms.App_Data;
-using OnlineBooking.WebForms.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
-namespace OnlineBooking.WebForms.Admin
+﻿namespace OnlineBooking.WebForms.Admin
 {
-    public partial class AddCity : System.Web.UI.Page
+    using System;
+    using System.Linq;
+
+    using OnlineBooking.WebForms.Models;
+    using OnlineBooking.WebForms.BasePage;
+
+    public partial class AddCity : BasePage
     {
-        private IOnlineBookingData data;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.data = new OnlineBookingData(new OnlineBookingDbContext());
 
             if (!this.IsPostBack)
             {
-                var countries = this.data.Counties.All().Select(c => c.Name).ToList();
+                var countries = this.Data.Counties.All().Select(c => c.Name).ToList();
                 this.CountriesList.DataSource = countries;
                 this.CountriesList.DataBind();
             }
@@ -27,7 +22,7 @@ namespace OnlineBooking.WebForms.Admin
 
         protected void AddCity_Click(object sender, EventArgs e)
         {
-            var selectedCountry = this.data.Counties.All()
+            var selectedCountry = this.Data.Counties.All()
                 .FirstOrDefault(c => c.Name == this.CountriesList.SelectedValue);
 
             City newCity = new City()
@@ -36,9 +31,9 @@ namespace OnlineBooking.WebForms.Admin
                 CountryId = selectedCountry.Id
             };
 
-            this.data.Cities.Add(newCity);
-            this.data.Counties.All().FirstOrDefault(c => c.Id == selectedCountry.Id).Cities.Add(newCity);
-            this.data.SaveChanges();
+            this.Data.Cities.Add(newCity);
+            this.Data.Counties.All().FirstOrDefault(c => c.Id == selectedCountry.Id).Cities.Add(newCity);
+            this.Data.SaveChanges();
 
             Response.Redirect("~/Default.aspx");
         }

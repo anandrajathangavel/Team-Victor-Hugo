@@ -1,15 +1,13 @@
-﻿using OnlineBooking.WebForms.App_Data;
-using OnlineBooking.WebForms.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
-namespace OnlineBooking.WebForms.Admin
+﻿namespace OnlineBooking.WebForms.Admin
 {
-    public partial class AddCountry : System.Web.UI.Page
+    using System;
+    using System.Linq;
+
+    using OnlineBooking.WebForms.App_Data;
+    using OnlineBooking.WebForms.Models;
+    using OnlineBooking.WebForms.BasePage;
+
+    public partial class AddCountry : BasePage
     {
         private IOnlineBookingData data;
 
