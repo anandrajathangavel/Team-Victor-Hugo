@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="OnlineBooking.WebForms._Default" %>
 
 <%@ Register src="~/Controls/LocationDropDown.ascx" tagname="LocationDropDown" tagprefix="place" %>
+<%@ Register src="~/Controls/SmallStarStack/SmallStarStack.ascx" tagname="SmallStarStack" tagprefix="place" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -43,6 +44,7 @@
                 <div class="col-md-4">
                     <h3><%#: Item.Name %></h3>
                     <p><%#: Item.City.Name %>, <%#: Item.City.Country.Name %></p>
+                    <p><place:SmallStarStack StarCount="<%# Item.Stars %>" runat="server"></place:SmallStarStack></p>
                     <p>
                         <asp:LinkButton ID="DetailsBtn" runat="server" Text="View place" CssClass="btn btn-success"
                                 CommandName="ViewDetails"

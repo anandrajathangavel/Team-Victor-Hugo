@@ -32,20 +32,17 @@
         <span class="col-lg-2 booking-det-value"><%:this.CurrentPlace.Capacity %></span>
     </div>
     <br />
-    <div class="row">
-        <span class="col-lg-3">Nights: </span>    
-
-        <%--IF ADMIN OF THE PLACE--%>
-        <span class="col-md-3">
-            
-            <asp:Button ID="AddNigthButton" runat="server" Text="Add" CssClass="btn btn-primary"
-                        CommandName="AddNigthBtn"
-                        CommandArgument="<%# this.CurrentPlace.Id %>"
-                        OnCommand="AddNigthBtn_Command" />
-        </span>
-        <%--====================================--%>
-
-    </div>
+    <asp:Panel ID="AdminOptions" runat="server">
+        <div class="row">
+            <span class="col-lg-3">Nights: </span>    
+            <span class="col-md-3">
+                <asp:Button ID="AddNigthButton" runat="server" Text="Add" CssClass="btn btn-primary"
+                            CommandName="AddNigthBtn"
+                            CommandArgument="<%# this.CurrentPlace.Id %>"
+                            OnCommand="AddNigthBtn_Command" />
+            </span>
+        </div>
+    </asp:Panel>
     <div class="row well nights-top-margin">
         <table class="table table-striped table-hover ">
             <thead>
