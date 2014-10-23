@@ -1,9 +1,10 @@
 namespace OnlineBooking.WebForms.App_Data.Migrations
 {
     using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using OnlineBooking.WebForms.Models;
+    using Microsoft.AspNet.Identity.EntityFramework;
 
     internal sealed class Configuration : DbMigrationsConfiguration<OnlineBookingDbContext>
     {
@@ -15,18 +16,27 @@ namespace OnlineBooking.WebForms.App_Data.Migrations
 
         protected override void Seed(OnlineBookingDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            var adminUser = context.Users.FirstOrDefault(u => u.UserName == "pesho@mail.com");
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            if (adminUser != null)
+            {
+                var adminRole = context.Roles.FirstOrDefault(r => r.Name == "Admin");
+
+                if (adminRole == null)
+                {
+                    var newRole = new IdentityRole();
+                    newRole.Name = "Admin";
+                    context.Roles.Add(newRole);
+
+                    adminUser.Roles.Add(new IdentityUserRole() { RoleId = newRole.Id, UserId = adminUser.Id });
+                }
+                else if (!adminUser.Roles.Any(u => u.UserId == adminUser.Id))
+                {
+                    adminUser.Roles.Add(new IdentityUserRole() { RoleId = adminRole.Id, UserId = adminUser.Id });
+                }
+
+                context.SaveChanges();
+            }
         }
     }
 }
