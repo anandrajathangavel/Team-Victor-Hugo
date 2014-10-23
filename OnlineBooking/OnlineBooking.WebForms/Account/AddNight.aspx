@@ -34,9 +34,6 @@
                             <asp:Button ID="AddNightBtn" runat="server" Text="Add" OnClick="AddNightBtn_Click" CssClass="btn btn-primary" />
                         </div>
                     </div>
-
-
-
                 </div>
             </asp:PlaceHolder>
         </section>
