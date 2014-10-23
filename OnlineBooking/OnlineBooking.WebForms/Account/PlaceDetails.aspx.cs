@@ -25,6 +25,8 @@
                 Response.Redirect("~/Default.aspx");
             }
 
+            this.DetermineIfFieldsShouldBeShown(this.CurrentPlace);
+
             // Enables admin option if the current user is the owner of the place
             this.EnableAdminOptions(this.CurrentPlace.Administrator.UserName);
 
@@ -61,6 +63,19 @@
             else
             {
                 this.AdminOptions.Visible = false;
+            }
+        }
+
+        private void DetermineIfFieldsShouldBeShown(Place place)
+        {
+            if (String.IsNullOrEmpty(place.Email))
+            {
+                this.EmailContainer.Visible = false;
+            }
+
+            if (String.IsNullOrEmpty(place.Phone))
+            {
+                this.PhoneNumContainer.Visible = false;
             }
         }
     }

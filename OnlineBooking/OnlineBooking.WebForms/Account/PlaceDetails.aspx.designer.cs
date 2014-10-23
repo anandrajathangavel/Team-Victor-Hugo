@@ -22,6 +22,24 @@ namespace OnlineBooking.WebForms.Account {
         protected global::System.Web.UI.WebControls.Repeater starsRepeater;
         
         /// <summary>
+        /// PhoneNumContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PhoneNumContainer;
+        
+        /// <summary>
+        /// EmailContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel EmailContainer;
+        
+        /// <summary>
         /// AdminOptions control.
         /// </summary>
         /// <remarks>

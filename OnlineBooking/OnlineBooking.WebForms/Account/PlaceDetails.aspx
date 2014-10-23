@@ -17,16 +17,20 @@
         <span class="col-lg-2 booking-det-value"><%: this.CurrentPlace.City.Name %>, <%: this.CurrentPlace.City.Country.Name %></span>
     </div>
     <br/>
-    <div class="row">
-        <span class="col-lg-3">Phone Number: </span>
-        <span class="col-lg-2 booking-det-value"><%:this.CurrentPlace.Phone %></span>
-    </div>
-    <br />
-    <div class="row">
-        <span class="col-lg-3">Email: </span>
-        <span class="col-lg-2 booking-det-value"><%:this.CurrentPlace.Email %></span>
-    </div>
-    <br />
+    <asp:Panel ID="PhoneNumContainer" runat="server">
+        <div class="row">
+            <span class="col-lg-3">Phone Number: </span>
+            <span class="col-lg-2 booking-det-value"><%:this.CurrentPlace.Phone %></span>
+        </div>
+        <br />
+    </asp:Panel>
+    <asp:Panel ID="EmailContainer" runat="server">
+        <div class="row">
+            <span class="col-lg-3">Email: </span>
+            <span class="col-lg-2 booking-det-value"><%:this.CurrentPlace.Email %></span>
+        </div>
+        <br />
+    </asp:Panel>
     <div class="row">
         <span class="col-lg-3">Capacity: </span>
         <span class="col-lg-2 booking-det-value"><%:this.CurrentPlace.Capacity %></span>
