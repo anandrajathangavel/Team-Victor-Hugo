@@ -25,6 +25,10 @@
                 Response.Redirect("~/Default.aspx");
             }
 
+            // Enables admin option if the current user is the owner of the place
+            this.EnableAdminOptions(this.CurrentPlace.Administrator.UserName);
+
+            // Sets page title
             this.Title = this.CurrentPlace.Name;
 
             starsRepeater.DataSource = new Array[this.CurrentPlace.Stars];
@@ -51,5 +55,16 @@
             this.Response.Redirect(queryString);
         }
 
+        private void EnableAdminOptions(string placeAdmin)
+        {
+            if (placeAdmin == this.User.Identity.Name)
+            {
+                this.AdminOptions.Visible = true;
+            }
+            else
+            {
+                this.AdminOptions.Visible = false;
+            }
+        }
     }
 }
