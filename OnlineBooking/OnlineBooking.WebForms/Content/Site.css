@@ -105,15 +105,28 @@ input[type="select"] {
     font-size: 18px;
 }
 
-.starImage{
+.starImage {
     display: inline-block;
     margin: 15px 0px;
     padding: 0;
     width: 40px;
 }
-.inline-heading
-{
+
+.inline-heading {
     display: inline-block;
-    margin: 20px 00px;
+    margin: 20px 0;
     padding: 0;
+}
+
+.nights-top-margin {
+    margin-top: 20px;
+}
+
+.booking-det-value {
+    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+#place-stars {
+    margin: 8px 0 0 5px;
 }

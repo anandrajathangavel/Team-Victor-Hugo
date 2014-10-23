@@ -24,11 +24,14 @@
                 // Should be Not Found
                 Response.Redirect("~/Default.aspx");
             }
+
+            this.Title = this.CurrentPlace.Name;
+
             starsRepeater.DataSource = new Array[this.CurrentPlace.Stars];
             starsRepeater.DataBind();
 
-            nightsList.DataSource = this.CurrentPlace.Nights;
-            nightsList.DataBind();
+            this.NightsList.DataSource = this.CurrentPlace.Nights;
+            this.NightsList.DataBind();
         }
 
         protected void BookBtn_Command(object sender, CommandEventArgs e)
