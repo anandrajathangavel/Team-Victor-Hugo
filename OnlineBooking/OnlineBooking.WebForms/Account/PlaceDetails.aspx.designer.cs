@@ -22,15 +22,6 @@ namespace OnlineBooking.WebForms.Account {
         protected global::System.Web.UI.WebControls.Repeater starsRepeater;
         
         /// <summary>
-        /// PlaceImage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image PlaceImage;
-        
-        /// <summary>
         /// PhoneNumContainer control.
         /// </summary>
         /// <remarks>
@@ -65,6 +56,15 @@ namespace OnlineBooking.WebForms.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button AddNigthButton;
+        
+        /// <summary>
+        /// PlaceImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image PlaceImage;
         
         /// <summary>
         /// NightsList control.

@@ -130,9 +130,24 @@ input[type="select"] {
 #place-stars {
     margin: 8px 0 0 5px;
 }
+
 .inlile-row
 {
     width:70%;
     margin: 20px 0px;
     display:inline-block
+}
+
+#place-data {
+    overflow: hidden;
+}
+
+#place-data > .general {
+    white-space: nowrap;
+    width: 70%;
+    float: left;
+}
+
+#place-data > .avatar {
+    float: right;
 }
