@@ -13,6 +13,11 @@
     </div>
     <br />
     <div class="row">
+        <span class="col-lg-3">Location: </span>
+        <span class="col-lg-2 booking-det-value"><%: this.CurrentPlace.City.Name %>, <%: this.CurrentPlace.City.Country.Name %></span>
+    </div>
+    <br/>
+    <div class="row">
         <span class="col-lg-3">Phone Number: </span>
         <span class="col-lg-2 booking-det-value"><%:this.CurrentPlace.Phone %></span>
     </div>
