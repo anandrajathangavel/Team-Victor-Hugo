@@ -51,7 +51,7 @@
                 }
 
                 string fileName = Guid.NewGuid().ToString();
-                fileName += '.'+Path.GetExtension(FileUploadControl.FileName);
+                fileName += Path.GetExtension(FileUploadControl.FileName);
                 
                 string saveImagePath = Server.MapPath("~/Uploaded_Files/") + fileName;
                 imagePath = "~/Uploaded_Files/" + fileName;
