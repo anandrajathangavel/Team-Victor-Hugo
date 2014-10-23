@@ -1,12 +1,9 @@
 ﻿namespace OnlineBooking.WebForms.Account
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Web.UI;
 
     using Error_Handler_Control;
-    using OnlineBooking.WebForms.App_Data;
     using OnlineBooking.WebForms.Models;
     using OnlineBooking.WebForms.BasePage;
 
@@ -65,7 +62,7 @@
                 Capacity = int.Parse(this.Capacity.Text),
                 Email = this.Email.Text,
                 Phone = this.Phone.Text,
-                Administrators = new List<ApplicationUser>() { currentUser }
+                Administrator = currentUser
             };
 
             this.Data.Places.Add(newPlace);

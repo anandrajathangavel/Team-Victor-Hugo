@@ -42,8 +42,8 @@
             int nightId = Convert.ToInt32(e.CommandArgument);
 
             string currentUserId = User.Identity.GetUserId();
+            
             var currentUser = this.Data.Users.All().FirstOrDefault(u => u.Id == currentUserId);
-
             var selectedNight = this.CurrentPlace.Nights.FirstOrDefault(n => n.Id == nightId);
             
             if (this.ArrivingDate.Value == string.Empty || this.DepartureDate.Value == string.Empty)

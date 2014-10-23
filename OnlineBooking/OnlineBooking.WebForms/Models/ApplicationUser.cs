@@ -12,14 +12,12 @@ namespace OnlineBooking.WebForms.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        private ICollection<Place> adminOfPlaces;
         private ICollection<Notification> notifications;
         private ICollection<Reservation> reservations;
 
         public ApplicationUser()
             : base()
         {
-            this.AdminOfPlaces = new List<Place>();
             this.Notifications = new List<Notification>();
             this.Reservations = new List<Reservation>();
         }
@@ -49,19 +47,6 @@ namespace OnlineBooking.WebForms.Models
                 this.notifications = value;
             }
         }
-
-        public virtual ICollection<Place> AdminOfPlaces
-        {
-            get
-            {
-                return this.adminOfPlaces;
-            }
-            set
-            {
-                this.adminOfPlaces = value;
-            }
-        }
-
 
         public ClaimsIdentity GenerateUserIdentity(ApplicationUserManager manager)
         {

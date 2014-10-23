@@ -6,14 +6,12 @@
 
     public class Place
     {
-        private ICollection<ApplicationUser> admins;
         private ICollection<Service> services;
         private ICollection<Night> nigths;
         private ICollection<Reservation> reservations;
 
         public Place()
         {
-            this.Administrators = new List<ApplicationUser>();
             this.Services = new List<Service>();
             this.Nights = new List<Night>();
             this.Reservations = new List<Reservation>();
@@ -35,17 +33,10 @@
 
         public virtual City City { get; set; }
 
-        public virtual ICollection<ApplicationUser> Administrators
-        {
-            get
-            {
-                return this.admins;
-            }
-            set
-            {
-                this.admins = value;
-            }
-        }
+        public  string AdministratorId { get; set; }
+
+        public virtual ApplicationUser Administrator { get; set; }
+        
         public virtual ICollection<Service> Services
         {
             get

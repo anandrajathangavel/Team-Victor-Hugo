@@ -36,7 +36,7 @@
         public DataTable GetUserPlaces(string currentUser)
         {
             var places = this.data.Places.All()
-                .Where(p => p.Administrators.Any(a => a.UserName == currentUser));
+                .Where(p => p.Administrator.UserName == currentUser);
 
             return this.IQueryableToDataTable(places);
         }
