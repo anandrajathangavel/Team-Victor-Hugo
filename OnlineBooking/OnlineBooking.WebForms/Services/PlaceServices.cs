@@ -5,13 +5,10 @@
     using OnlineBooking.WebForms.App_Data;
     using OnlineBooking.WebForms.Models;
 
-    public class PlaceServices
+    public class PlaceServices : Service
     {
-        private readonly IOnlineBookingData data;
-
         public PlaceServices()
         {
-            this.data = new OnlineBookingData(new OnlineBookingDbContext());
         }
 
         public DataTable GetAll(string country, string city, string starsStr)
@@ -41,7 +38,7 @@
             return this.IQueryableToDataTable(places);
         }
 
-        private DataTable IQueryableToDataTable(IQueryable<Place> places)
+        public override DataTable IQueryableToDataTable(IQueryable places)
         {
             var dataTable = new DataTable();
 
