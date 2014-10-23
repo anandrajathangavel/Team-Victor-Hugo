@@ -12,9 +12,12 @@
         </div>
     </div>
     <br />
-    <div class="row">
-        <span class="col-lg-3">Location: </span>
-        <span class="col-lg-2 booking-det-value"><%: this.CurrentPlace.City.Name %>, <%: this.CurrentPlace.City.Country.Name %></span>
+    <div class="pull-right avatar">
+        <asp:Image ImageUrl='<%#this.CurrentPlace.ImagePath%>' Id="PlaceImage"  Width="250" Height="250" runat="server" />
+    </div>
+    <div class="row inlile-row" >
+        <span class="col-lg-4">Location: </span>
+        <span class="col-lg-4 booking-det-value"><%: this.CurrentPlace.City.Name %>, <%: this.CurrentPlace.City.Country.Name %></span>
     </div>
     <br/>
     <asp:Panel ID="PhoneNumContainer" runat="server">
@@ -38,12 +41,12 @@
     <br />
     <asp:Panel ID="AdminOptions" runat="server">
         <div class="row">
-            <span class="col-lg-3">Nights: </span>    
+            <span class="col-lg-3">Nights: </span>
             <span class="col-md-3">
-                <asp:Button ID="AddNigthButton" runat="server" Text="Add" CssClass="btn btn-primary"
-                            CommandName="AddNigthBtn"
-                            CommandArgument="<%# this.CurrentPlace.Id %>"
-                            OnCommand="AddNigthBtn_Command" />
+            <asp:Button ID="AddNigthButton" runat="server" Text="Add" CssClass="btn btn-primary"
+                CommandName="AddNigthBtn"
+                CommandArgument="<%# this.CurrentPlace.Id %>"
+                OnCommand="AddNigthBtn_Command" />
             </span>
         </div>
     </asp:Panel>
@@ -68,9 +71,7 @@
                 </asp:Repeater>
             </tbody>
         </table>
-
-            <br />
-
+        <br />
         <div class="row">
             <span class="col-md-3">
                 <asp:Button ID="BookBtn" runat="server" Text="Book" CssClass="btn btn-success" OnCommand="BookBtn_Command"  />

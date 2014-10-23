@@ -38,6 +38,9 @@
 
             this.NightsList.DataSource = this.CurrentPlace.Nights;
             this.NightsList.DataBind();
+
+            this.PlaceImage.ImageUrl = this.CurrentPlace.ImagePath;
+            this.PlaceImage.DataBind();
         }
 
         protected void BookBtn_Command(object sender, CommandEventArgs e)

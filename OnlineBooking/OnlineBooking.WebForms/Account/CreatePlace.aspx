@@ -17,6 +17,11 @@
                             <asp:TextBox runat="server" ID="PlaceName" CssClass="form-control" />
                             <%--<asp:RequiredFieldValidator  ID="RequiredFieldValidatorPlaceName" ControlToValidate="PlaceName" runat="server" Display="Dynamic" Text="Required Field" ErrorMessage="Plaec Name is required!" ForeColor="Red" EnableClientScript="False" />--%><br />
                         </div>
+                        <asp:Label runat="server" AssociatedControlID="PlaceName" CssClass="col-md-2 control-label">Picture</asp:Label>
+                        <div class="col-md-10">
+                            <asp:FileUpload ID="FileUploadControl" runat="server" CssClass=" form-control"/>
+                            <%--<asp:RequiredFieldValidator  ID="RequiredFieldValidatorPlaceName" ControlToValidate="PlaceName" runat="server" Display="Dynamic" Text="Required Field" ErrorMessage="Plaec Name is required!" ForeColor="Red" EnableClientScript="False" />--%><br />
+                        </div>
                     </div>
                     <place:LocationDropDown ID="Location" runat="server" />
                     <div class="form-group">

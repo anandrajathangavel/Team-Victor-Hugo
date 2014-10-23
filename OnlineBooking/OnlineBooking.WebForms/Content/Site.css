@@ -130,3 +130,9 @@ input[type="select"] {
 #place-stars {
     margin: 8px 0 0 5px;
 }
+.inlile-row
+{
+    width:70%;
+    margin: 20px 0px;
+    display:inline-block
+}
