@@ -17,8 +17,6 @@
 
         public DateTime DepartureDate { get; set; }
 
-        public int NightsCount { get; set; }
-
         public bool Confirmed { get; set; }
 
         public virtual string UserId { get; set; }
@@ -28,6 +26,10 @@
         public int PlaceId { get; set; }
 
         public virtual Place Place { get; set; }
+
+        //public int NightId { get; set; }
+
+        //public virtual Night Night{ get; set; }
 
         public virtual ICollection<Place> Places
         {

@@ -74,10 +74,12 @@
                 DepartureDate = depDate,
                 UserId = currentUserId,
                 PlaceId = CurrentPlace.Id
+                //NightId = selectedNight.Id
             };
 
             this.Data.Reservations.Add(newReservation);
             this.CurrentPlace.Reservations.Add(newReservation);
+            currentUser.Reservations.Add(newReservation);
             this.Data.SaveChanges();
 
             ErrorSuccessNotifier.AddSuccessMessage("Your reservation is now pending confirmation!");

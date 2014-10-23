@@ -157,6 +157,7 @@
     <Content Include="Account\ManageLogins.aspx" />
     <Content Include="Account\ManagePassword.aspx" />
     <Content Include="Account\MyPlaces.aspx" />
+    <Content Include="Account\MyReservations.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\PlaceDetails.aspx" />
     <Content Include="Account\Register.aspx" />
@@ -326,6 +327,13 @@
     </Compile>
     <Compile Include="Account\MyPlaces.aspx.designer.cs">
       <DependentUpon>MyPlaces.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\MyReservations.aspx.cs">
+      <DependentUpon>MyReservations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\MyReservations.aspx.designer.cs">
+      <DependentUpon>MyReservations.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\OpenAuthProviders.ascx.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
