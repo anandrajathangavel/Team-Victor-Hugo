@@ -8,6 +8,7 @@
     using Error_Handler_Control;
     using OnlineBooking.WebForms.Models;
     using OnlineBooking.WebForms.BasePage;
+    using System.IO;
 
     public partial class CreatePlace : BasePage
     {
@@ -26,14 +27,42 @@
             var currentUserId = User.Identity.GetUserId();
 
             string placeNameText = this.PlaceName.Text;
-            
+            string imagePath;
+
             if (placeNameText == null || placeNameText == string.Empty)
             {
                 ErrorSuccessNotifier.AddErrorMessage("Place Name is Required!");
                 Response.Redirect("CreatePlace.aspx");
             }
-            if (this.Stars.Text == null || this.Stars.Text == string.Empty)
+
+            if (FileUploadControl.HasFile)
             {
+                if (FileUploadControl.PostedFile.ContentType != "image/jpg" &&
+                    FileUploadControl.PostedFile.ContentType != "image/jpeg" &&
+                    FileUploadControl.PostedFile.ContentType != "image/png" )
+                {
+                    ErrorSuccessNotifier.AddErrorMessage("Invalid file type!");
+                    Response.Redirect("CreatePlace.aspx");
+                }
+                if (FileUploadControl.PostedFile.ContentLength > 375000)
+                {
+                    ErrorSuccessNotifier.AddErrorMessage("File should be less than 3MB!");
+                    Response.Redirect("CreatePlace.aspx");
+                }
+
+                string fileName = Guid.NewGuid().ToString();
+                fileName += '.'+Path.GetExtension(FileUploadControl.FileName);
+                
+                string saveImagePath = Server.MapPath("~/Uploaded_Files/") + fileName;
+                imagePath = "~/Uploaded_Files/" + fileName;
+                FileUploadControl.SaveAs(saveImagePath);
+            }
+            else
+            {
+                imagePath = "../Uploaded_Files/Default-Image.png";
+            }
+            if (this.Stars.Text == null || this.Stars.Text == string.Empty)
+            {   
                 ErrorSuccessNotifier.AddErrorMessage("Stars Count is Required!");
                 Response.Redirect("CreatePlace.aspx");
             }
@@ -57,9 +86,13 @@
                 Response.Redirect("CreatePlace.aspx");
             }
 
+
+
+
             Place newPlace = new Place()
             {
                 Name = placeNameText,
+                ImagePath = imagePath,
                 CityId = selectedCity.Id,
                 Stars = starsCount,
                 Capacity = int.Parse(this.Capacity.Text),
@@ -70,7 +103,7 @@
 
             this.Data.Places.Add(newPlace);
             this.Data.SaveChanges();
-                
+
             Response.Redirect("~/Account/MyPlaces.aspx");
         }
     }

@@ -12,27 +12,30 @@
         </div>
     </div>
     <br />
-    <div class="row">
-        <span class="col-lg-3">Location: </span>
-        <span class="col-lg-2 booking-det-value"><%: this.CurrentPlace.City.Name %>, <%: this.CurrentPlace.City.Country.Name %></span>
+    <div class="pull-right avatar">
+        <asp:Image ImageUrl='<%#this.CurrentPlace.ImagePath%>' Id="PlaceImage"  Width="250" Height="250" runat="server" />
+    </div>
+    <div class="row inlile-row" >
+        <span class="col-lg-4">Location: </span>
+        <span class="col-lg-4 booking-det-value"><%: this.CurrentPlace.City.Name %>, <%: this.CurrentPlace.City.Country.Name %></span>
     </div>
     <br/>
-    <div class="row">
-        <span class="col-lg-3">Phone Number: </span>
-        <span class="col-lg-2 booking-det-value"><%:this.CurrentPlace.Phone %></span>
+    <div class="row inlile-row">
+        <span class="col-lg-4">Phone Number: </span>
+        <span class="col-lg-4 booking-det-value"><%:this.CurrentPlace.Phone %></span>
     </div>
     <br />
-    <div class="row">
-        <span class="col-lg-3">Email: </span>
-        <span class="col-lg-2 booking-det-value"><%:this.CurrentPlace.Email %></span>
+    <div class="row inlile-row">
+        <span class="col-lg-4">Email: </span>
+        <span class="col-lg-4 booking-det-value"><%:this.CurrentPlace.Email %></span>
     </div>
     <br />
-    <div class="row">
-        <span class="col-lg-3">Capacity: </span>
-        <span class="col-lg-2 booking-det-value"><%:this.CurrentPlace.Capacity %></span>
+    <div class="row inlile-row">
+        <span class="col-lg-4">Capacity: </span>
+        <span class="col-lg-4    booking-det-value"><%:this.CurrentPlace.Capacity %></span>
     </div>
     <br />
-    <div class="row">
+    <div class="row inlile-row">
         <span class="col-lg-3">Nights: </span>    
 
         <%--IF ADMIN OF THE PLACE--%>
