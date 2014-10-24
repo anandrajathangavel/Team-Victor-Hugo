@@ -7,12 +7,17 @@
             <asp:PlaceHolder runat="server" ID="AddCountryPlHolder">
                 <div class="form-horizontal">
                     <h5>Add new country to the master list.</h5>
-                    <asp:ValidationSummary runat="server" ShowModelStateErrors="true" CssClass="text-danger" />
                     <hr />
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="CountryName" CssClass="col-md-2 control-label">Name</asp:Label>
                         <div class="col-md-10">
                             <asp:TextBox runat="server" ID="CountryName" CssClass="form-control" />
+                            <asp:RequiredFieldValidator ID="CountryNameValidator" ControlToValidate="CountryName"
+                                CssClass="text-danger"
+                                Display="Dynamic"
+                                ErrorMessage="The name field is required!"
+                                runat="server">
+                            </asp:RequiredFieldValidator>
                         </div>
                     </div>
                     <div class="form-group">

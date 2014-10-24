@@ -29,9 +29,15 @@
             string placeNameText = this.PlaceName.Text;
             string imagePath;
 
-            if (placeNameText == null || placeNameText == string.Empty)
+            if (String.IsNullOrEmpty(placeNameText))
             {
                 ErrorSuccessNotifier.AddErrorMessage("Place Name is Required!");
+                Response.Redirect("CreatePlace.aspx");
+            }
+
+            if (String.IsNullOrEmpty(this.Location.Country) || String.IsNullOrEmpty(this.Location.City))
+            {
+                ErrorSuccessNotifier.AddErrorMessage("The selected location is invalid!");
                 Response.Redirect("CreatePlace.aspx");
             }
 
@@ -85,9 +91,6 @@
                 ErrorSuccessNotifier.AddErrorMessage("Capacity should be between 1  and 10 000!");
                 Response.Redirect("CreatePlace.aspx");
             }
-
-
-
 
             Place newPlace = new Place()
             {

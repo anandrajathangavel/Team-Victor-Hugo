@@ -5,6 +5,7 @@
 
     using OnlineBooking.WebForms.Models;
     using OnlineBooking.WebForms.BasePage;
+    using Error_Handler_Control;
 
     public partial class AddCity : BasePage
     {
@@ -22,6 +23,12 @@
 
         protected void AddCity_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(this.CityName.Text))
+            {
+                ErrorSuccessNotifier.AddErrorMessage("The name field is required!");
+                Response.Redirect("AddCity.aspx");
+            }
+
             var selectedCountry = this.Data.Counties.All()
                 .FirstOrDefault(c => c.Name == this.CountriesList.SelectedValue);
 

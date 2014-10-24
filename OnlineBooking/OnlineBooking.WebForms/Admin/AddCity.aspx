@@ -7,7 +7,6 @@
             <asp:PlaceHolder runat="server" ID="AddCityPlHolder">
                 <div class="form-horizontal">
                     <h5>Add new city to a corresponding country.</h5>
-                    <asp:ValidationSummary runat="server" ShowModelStateErrors="true" CssClass="text-danger" />
                     <hr />
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="CountriesList" CssClass="col-md-2 control-label">Country</asp:Label>
@@ -20,6 +19,11 @@
                         <asp:Label runat="server" AssociatedControlID="CityName" CssClass="col-md-2 control-label">City Name</asp:Label>
                         <div class="col-md-10">
                             <asp:TextBox runat="server" ID="CityName" CssClass="form-control" />
+                            <asp:RequiredFieldValidator ID="CityNameValidator" ControlToValidate="CityName" CssClass="text-danger"
+                                Display="Dynamic"
+                                ErrorMessage="The name field is required!"
+                                runat="server">
+                            </asp:RequiredFieldValidator>
                         </div>
                     </div>
                     <div class="form-group">
