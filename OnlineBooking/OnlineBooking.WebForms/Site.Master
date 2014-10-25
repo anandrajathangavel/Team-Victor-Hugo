@@ -85,6 +85,7 @@
                                             <ul class="dropdown-menu">
                                                 <li><a runat="server" href="~/Account/MyPlaces.aspx">My Places</a></li>
                                                 <li><a runat="server" href="~/Account/MyReservations.aspx">My Reservations</a></li>
+                                                <li><a runat="server" href="~/Account/ReservationsAdministration.aspx">Administrate Reservations</a></li>
                                                 <li class="divider"></li>
                                                 <li>
                                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log out" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
@@ -105,6 +106,7 @@
                                     <ul class="dropdown-menu">
                                         <li><a runat="server" href="~/Account/MyPlaces.aspx">My Places</a></li>
                                         <li><a runat="server" href="~/Account/MyReservations.aspx">My Reservations</a></li>
+                                        <li><a runat="server" href="~/Account/ReservationsAdministration.aspx">Administrate Reservations</a></li>
                                         <li class="divider"></li>
                                         <li>
                                             <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log out" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />

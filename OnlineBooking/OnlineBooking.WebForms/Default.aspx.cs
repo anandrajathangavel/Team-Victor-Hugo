@@ -9,7 +9,7 @@
     public partial class _Default : BasePage.BasePage
     {
         private const int PLACES_NUM = 6;
-        private const int CACHE_EXP_MINUTES = 1;
+        private const int CACHE_EXP_MINUTES = 2 ;
 
         protected void Page_Load(object sender, EventArgs e)
         {
