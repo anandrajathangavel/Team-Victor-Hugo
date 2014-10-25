@@ -22,19 +22,20 @@ namespace OnlineBooking.WebForms.App_Data.Migrations
             {
                 var adminRole = new IdentityRole { Name = "Admin" };
                 context.Roles.Add(adminRole);
+                context.SaveChanges();
             }
 
             if (context.Users.Count() == 0)
             {
-                var adminRole = context.Roles.FirstOrDefault(r => r.Name == "Admin");
 
                 var administartor = new ApplicationUser { UserName = "admin@admin.com" };
-                context.Users.Add(administartor);
+                var adminRole = context.Roles.FirstOrDefault(r => r.Name == "Admin");
 
                 administartor.Roles.Add(new IdentityUserRole() { RoleId = adminRole.Id, UserId = administartor.Id });
 
+                context.Users.Add(administartor);
+                context.SaveChanges();
             }
-
 
             if (context.Counties.Count() == 0)
             {
