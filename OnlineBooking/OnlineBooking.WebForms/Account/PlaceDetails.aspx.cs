@@ -10,15 +10,13 @@
 
     public partial class PlaceDetails : BasePage
     {
-        private IOnlineBookingData data;
         public Place CurrentPlace;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.data = new OnlineBookingData(new OnlineBookingDbContext());
             int placeId = Convert.ToInt32(Request.Params["placeId"]);
 
-            this.CurrentPlace = this.data.Places.All().FirstOrDefault(p => p.Id == placeId);
+            this.CurrentPlace = this.Data.Places.All().FirstOrDefault(p => p.Id == placeId);
             if(CurrentPlace == null)
             {
                 // Should be Not Found

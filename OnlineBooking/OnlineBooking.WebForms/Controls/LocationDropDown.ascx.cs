@@ -2,11 +2,13 @@
 {
     using System;
     using System.Linq;
-    using OnlineBooking.WebForms.App_Data;
     using System.Web.UI.WebControls;
     using System.Collections.Generic;
+    using System.Web.UI;
 
-    public partial class LocationDropDown : System.Web.UI.UserControl
+    using OnlineBooking.WebForms.App_Data;
+
+    public partial class LocationDropDown : UserControl
     {
         private IOnlineBookingData data;
 
@@ -38,7 +40,7 @@
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.data = new OnlineBookingData(new OnlineBookingDbContext());
+            this.data = new OnlineBookingData();
 
             if (!this.IsPostBack)
             {

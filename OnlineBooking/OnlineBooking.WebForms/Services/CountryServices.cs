@@ -2,28 +2,25 @@
 {
     using System.Data;
     using System.Linq;
-    using OnlineBooking.WebForms.App_Data;
+
     using OnlineBooking.WebForms.Models;
 
     public class CountryServices : Service
     {
-        public CountryServices()
-        {
-        }
 
         public DataTable GetAll()
         {
-            var countries = this.data.Counties.All();
+            var countries = this.Data.Counties.All();
 
             return this.IQueryableToDataTable(countries);
         }
 
         public void UpdateCountry(int id, string name)
         {
-            var selectedCountry = this.data.Counties.All().FirstOrDefault(c => c.Id == id);
+            var selectedCountry = this.Data.Counties.All().FirstOrDefault(c => c.Id == id);
             selectedCountry.Name = name;
 
-            this.data.SaveChanges();
+            this.Data.SaveChanges();
         }
 
         public override DataTable IQueryableToDataTable(IQueryable countries)

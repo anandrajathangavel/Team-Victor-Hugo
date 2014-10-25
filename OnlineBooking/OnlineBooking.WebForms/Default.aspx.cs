@@ -10,15 +10,13 @@
     {
         private const int PLACES_NUM = 6;
         private const int CACHE_EXP_MINUTES = 1;
-        private IOnlineBookingData data;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.data = new OnlineBookingData(new OnlineBookingDbContext());
             
             if (this.Cache["FinestPlaces"] == null)
             {
-                var finestPlaces = this.data.Places.All()
+                var finestPlaces = this.Data.Places.All()
                     .OrderByDescending(p => p.Stars)
                     .Take(PLACES_NUM)
                     .ToList();

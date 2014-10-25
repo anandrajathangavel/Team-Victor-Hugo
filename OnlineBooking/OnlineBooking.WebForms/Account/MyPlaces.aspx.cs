@@ -1,10 +1,9 @@
 ﻿namespace OnlineBooking.WebForms.Account
 {
     using System;
+    using System.Web.UI;
 
-    using OnlineBooking.WebForms.BasePage;
-
-    public partial class MyPlaces : BasePage
+    public partial class MyPlaces : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

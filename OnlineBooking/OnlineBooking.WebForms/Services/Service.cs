@@ -6,16 +6,16 @@
 
     public abstract class Service
     {
-        protected readonly IOnlineBookingData data;
+        protected IOnlineBookingData Data {get;set;}
 
         public Service()
-            : this(new OnlineBookingData(new OnlineBookingDbContext()))
+            : this(new OnlineBookingData())
         {
         }
 
         public Service(IOnlineBookingData data)
         {
-            this.data = data;
+            this.Data = data;
         }
 
         public abstract DataTable IQueryableToDataTable(IQueryable dbData);

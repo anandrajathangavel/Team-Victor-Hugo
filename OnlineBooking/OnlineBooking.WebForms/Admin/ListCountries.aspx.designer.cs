@@ -13,15 +13,6 @@ namespace OnlineBooking.WebForms.Admin {
     public partial class ListCountries {
         
         /// <summary>
-        /// OdsCountries control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource OdsCountries;
-        
-        /// <summary>
         /// CountriesList control.
         /// </summary>
         /// <remarks>

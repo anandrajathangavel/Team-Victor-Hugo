@@ -476,6 +476,7 @@
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\IdentityHelper.cs" />
+    <Compile Include="Models\ListPlaceViewModel.cs" />
     <Compile Include="Models\Night.cs" />
     <Compile Include="Models\NightBasis.cs" />
     <Compile Include="Models\Notification.cs" />
