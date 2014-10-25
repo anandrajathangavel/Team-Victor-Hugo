@@ -18,13 +18,13 @@ namespace OnlineBooking.WebForms.App_Data.Migrations
         protected override void Seed(OnlineBookingDbContext context)
         {
 
-            if(context.Roles==0)
+            if (context.Roles.Count() == 0)
             {
-                var adminRole = new IdentityRole { Name="Admin"};
+                var adminRole = new IdentityRole { Name = "Admin" };
                 context.Roles.Add(adminRole);
             }
 
-            if(context.Users==0)
+            if (context.Users.Count() == 0)
             {
                 var adminRole = context.Roles.FirstOrDefault(r => r.Name == "Admin");
 
