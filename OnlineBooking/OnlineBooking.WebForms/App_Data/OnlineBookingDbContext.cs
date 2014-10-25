@@ -30,7 +30,7 @@
 
         public IDbSet<Notification> Notifications { get; set; }
 
-        public IDbSet<T> Set<T>() where T : class
+        public IDbSet<T> SetEntity<T>() where T : class
         {
             return base.Set<T>();
         }

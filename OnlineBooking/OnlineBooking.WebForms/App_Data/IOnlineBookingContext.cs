@@ -20,7 +20,7 @@
 
         IDbSet<Notification> Notifications { get; set; }
 
-        IDbSet<T> Set<T>() where T : class;
+        IDbSet<T> SetEntity<T>() where T : class;
 
         DbEntityEntry<T> Entry<T>(T entity) where T : class;
 

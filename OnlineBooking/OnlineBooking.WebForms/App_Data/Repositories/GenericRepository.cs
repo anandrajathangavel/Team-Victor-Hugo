@@ -17,7 +17,7 @@
 
         public IQueryable<T> All()
         {
-            return this.context.Set<T>();
+            return this.context.SetEntity<T>();
         }
 
         public IQueryable<T> SearchFor(Expression<Func<T, bool>> conditions)
@@ -48,7 +48,7 @@
 
         private void ChangeState(T entity, EntityState state)
         {
-            this.context.Set<T>().Attach(entity);
+            this.context.SetEntity<T>().Attach(entity);
             this.context.Entry(entity).State = state;
         }
 
