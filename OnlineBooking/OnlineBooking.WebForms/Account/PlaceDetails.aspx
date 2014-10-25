@@ -76,11 +76,15 @@
             </tbody>
         </table>
         <br />
-        <div class="row">
-            <span class="col-md-3">
-                <asp:Button ID="BookBtn" runat="server" Text="Book" CssClass="btn btn-success" OnCommand="BookBtn_Command"  />
-            </span>       
-        </div>
+        <asp:LoginView runat="server" ViewStateMode="Disabled">
+            <LoggedInTemplate>
+                <div class="row">
+                    <span class="col-md-3">
+                        <asp:Button ID="BookBtn" runat="server" Text="Book" CssClass="btn btn-success" OnCommand="BookBtn_Command"  />
+                    </span>       
+                </div>
+            </LoggedInTemplate>
+        </asp:LoginView>
     </div>
 
 

@@ -35,10 +35,10 @@
             return base.Set<T>();
         }
 
-        public override int SaveChanges()
-        {
-            return base.SaveChanges();
-        }
+        //public override int SaveChanges()
+        //{
+        //    return base.SaveChanges();
+        //}
 
         public static OnlineBookingDbContext Create()
         {

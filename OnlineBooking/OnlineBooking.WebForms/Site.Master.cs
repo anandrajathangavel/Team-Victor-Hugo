@@ -45,6 +45,7 @@ namespace OnlineBooking.WebForms
             }
 
             Page.PreLoad += master_Page_PreLoad;
+            
         }
 
         protected void master_Page_PreLoad(object sender, EventArgs e)
@@ -68,7 +69,6 @@ namespace OnlineBooking.WebForms
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

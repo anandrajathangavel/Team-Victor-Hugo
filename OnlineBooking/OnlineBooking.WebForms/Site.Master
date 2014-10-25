@@ -52,53 +52,30 @@
                     </a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <!-- TODO: Fix the mess -->
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                    <!-- TODO: Hide Cities and Countries -->
+                    <asp:LoginView runat="server" ViewStateMode="Disabled" >
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="~/Account/Register">Register</a></li>
                                 <li><a runat="server" href="~/Account/Login">Log in</a></li>
                             </ul>
                         </AnonymousTemplate>
-                        <RoleGroups>
-                            <asp:RoleGroup Roles="Admin">
-                                <ContentTemplate>
-                                    <ul class="nav navbar-nav">
-                                        <li><a runat="server" href="~/Account/CreatePlace">Create Place</a></li>
-                                        <li>
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Countries <b class="caret"></b></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a runat="server" href="~/Admin/ListCountries.aspx">List</a>
-                                                <li><a runat="server" href="~/Admin/AddCountry">Add</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cities <b class="caret"></b></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a runat="server" href="~/Admin/AddCity">Add</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                    <ul class="nav navbar-nav navbar-right">
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hello, <%: Context.User.Identity.GetUserName() %>! <b class="caret"></b></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a runat="server" href="~/Account/MyPlaces.aspx">My Places</a></li>
-                                                <li><a runat="server" href="~/Account/MyReservations.aspx">My Reservations</a></li>
-                                                <li><a runat="server" href="~/Account/ReservationsAdministration.aspx">Administrate Reservations</a></li>
-                                                <li class="divider"></li>
-                                                <li>
-                                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log out" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </ContentTemplate>
-                            </asp:RoleGroup>
-                        </RoleGroups>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav">
                                 <li><a runat="server" href="~/Account/CreatePlace">Create Place</a></li>
+                                <li id="AdminCountries">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Countries <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a runat="server" href="~/Admin/ListCountries.aspx">List</a>
+                                        <li><a runat="server" href="~/Admin/AddCountry.aspx">Add</a></li>
+                                    </ul>
+                                </li>
+                                <li id="AdminCities">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cities <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a runat="server" href="~/Admin/AddCity.aspx">Add</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="dropdown">
