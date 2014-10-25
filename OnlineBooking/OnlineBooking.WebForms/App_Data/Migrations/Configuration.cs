@@ -70,14 +70,15 @@ namespace OnlineBooking.WebForms.App_Data.Migrations
             }
             if (context.Places.Count() == 0)
             {
+                var administrator = context.Users.FirstOrDefault(u => u.UserName == "admin@admin.com");
                 var initialPlaces = new List<Place>
                 {
-                    new Place{ Name = "Hilton Sofia", Capacity = 4096, Stars =5, Phone= "0889111222", Email = "HiltonSofia@hilton.com", AdministratorId = adminUser.Id, CityId = 1},
-                    new Place{ Name = "Hotel Bulgaria", Capacity = 2048, Stars =4, Phone= "0873333222", Email = "bulgariaHotel@hotel.com", AdministratorId = adminUser.Id, CityId = 1},
-                    new Place{ Name = "Trimontium", Capacity = 2048, Stars =4, Phone= "0884552244", Email = "trimontium@hotel.com", AdministratorId = adminUser.Id, CityId = 2},
-                    new Place{ Name = "Cotinthia", Capacity = 8192, Stars =5, Phone= "+44 (0) 20 7930 8181", Email = "london@corinthia.com", AdministratorId = adminUser.Id, CityId = 4},
-                    new Place{ Name = "Downtown", Capacity = 5006, Stars =5, Phone= "(1)(646) 826-8600", Email = "downtown@manhattan.com", AdministratorId = adminUser.Id, CityId = 8},
-                    new Place{ Name = "Riviera Hotel & Casino", Capacity = 5006, Stars =5, Phone= "+1 702-734-5110", Email = "riviera@vegas.com", AdministratorId = adminUser.Id, CityId = 9},
+                    new Place{ Name = "Hilton Sofia", Capacity = 4096, Stars =5, Phone= "0889111222", Email = "HiltonSofia@hilton.com", AdministratorId = administrator.Id, CityId = 1},
+                    new Place{ Name = "Hotel Bulgaria", Capacity = 2048, Stars =4, Phone= "0873333222", Email = "bulgariaHotel@hotel.com", AdministratorId = administrator.Id, CityId = 1},
+                    new Place{ Name = "Trimontium", Capacity = 2048, Stars =4, Phone= "0884552244", Email = "trimontium@hotel.com", AdministratorId = administrator.Id, CityId = 2},
+                    new Place{ Name = "Cotinthia", Capacity = 8192, Stars =5, Phone= "+44 (0) 20 7930 8181", Email = "london@corinthia.com", AdministratorId = administrator.Id, CityId = 4},
+                    new Place{ Name = "Downtown", Capacity = 5006, Stars =5, Phone= "(1)(646) 826-8600", Email = "downtown@manhattan.com", AdministratorId = administrator.Id, CityId = 8},
+                    new Place{ Name = "Riviera Hotel & Casino", Capacity = 5006, Stars =5, Phone= "+1 702-734-5110", Email = "riviera@vegas.com", AdministratorId = administrator.Id, CityId = 9},
                 };
 
                 initialPlaces.ForEach(p => context.Places.Add(p));
