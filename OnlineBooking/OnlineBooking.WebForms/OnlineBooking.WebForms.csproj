@@ -170,6 +170,7 @@
     <Content Include="Admin\AddCity.aspx" />
     <Content Include="Admin\AddCountry.aspx" />
     <Content Include="Admin\ListCountries.aspx" />
+    <Content Include="Admin\ManageUsers.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\home_intro.jpg" />
@@ -421,6 +422,13 @@
     <Compile Include="Admin\ListCountries.aspx.designer.cs">
       <DependentUpon>ListCountries.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ManageUsers.aspx.cs">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageUsers.aspx.designer.cs">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Data\IOnlineBookingContext.cs" />
     <Compile Include="App_Data\IOnlineBookingData.cs" />
     <Compile Include="App_Data\Migrations\Configuration.cs" />
@@ -477,7 +485,8 @@
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\IdentityHelper.cs" />
-    <Compile Include="Models\ListPlaceViewModel.cs" />
+    <Compile Include="Models\ViewModels\ListPlaceViewModel.cs" />
+    <Compile Include="Models\ViewModels\ListUserViewModel.cs" />
     <Compile Include="Models\Night.cs" />
     <Compile Include="Models\NightBasis.cs" />
     <Compile Include="Models\Notification.cs" />
@@ -489,6 +498,7 @@
     <Compile Include="Services\CountryServices.cs" />
     <Compile Include="Services\PlaceServices.cs" />
     <Compile Include="Services\Service.cs" />
+    <Compile Include="Services\UsersService.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

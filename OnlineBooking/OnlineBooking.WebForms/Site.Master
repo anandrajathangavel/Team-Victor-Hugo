@@ -78,6 +78,9 @@
                                                 <li><a runat="server" href="~/Admin/AddCity">Add</a></li>
                                             </ul>
                                         </li>
+                                        <li>
+                                            <a href="/Admin/ManageUsers.aspx">Manage Users</a>
+                                        </li>
                                     </ul>
                                     <ul class="nav navbar-nav navbar-right">
                                         <li class="dropdown">

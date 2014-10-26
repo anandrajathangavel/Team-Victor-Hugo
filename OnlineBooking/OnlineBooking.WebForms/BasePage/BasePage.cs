@@ -17,7 +17,8 @@ namespace OnlineBooking.WebForms.BasePage
             this.Data = new OnlineBookingData();
         }
 
-        protected IOnlineBookingData Data { 
+        protected IOnlineBookingData Data 
+        { 
             get 
             {
                 return this.data;

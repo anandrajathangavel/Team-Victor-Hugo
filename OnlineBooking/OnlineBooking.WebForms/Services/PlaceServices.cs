@@ -3,7 +3,7 @@
     using System.Data;
     using System.Linq;
 
-    using OnlineBooking.WebForms.Models;
+    using OnlineBooking.WebForms.ViewModels;
 
     public class PlaceServices : Service
     {
