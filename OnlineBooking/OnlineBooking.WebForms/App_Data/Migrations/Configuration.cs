@@ -122,11 +122,11 @@ namespace OnlineBooking.WebForms.App_Data.Migrations
                 context.SaveChanges();
 
                 var random = new Random();
-                foreach (var place in context.Places)
+                foreach (var place in context.Places.ToList())
                 {
                     for (int i = 0; i < 2; i++)
                     {
-                        int randomNightId = random.Next(1, context.Nights.Count() + 1);
+                        int randomNightId = random.Next(1, context.Nights.ToList().Count() + 1);
                         var randomNight = context.Nights.FirstOrDefault(n => n.Id == randomNightId);
 
                         randomNight.Places.Add(place);
